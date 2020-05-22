@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private modalService: NgbModal) {}
+
+  loginModal(content) {
+    this.modalService.open(content, { centered: true, windowClass: 'login-modal', size: 'lg' });
+  }
 
   ngOnInit(): void {
   }

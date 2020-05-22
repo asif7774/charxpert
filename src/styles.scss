@@ -1,1 +1,197 @@
 @import "./assets/scss/_style.scss";
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+//====================== login/signup modal ==================//
+//====== Site variables =====//
+%login-bg {
+    background: #02c1fd;
+    background: -moz-radial-gradient(center, ellipse cover, #02c1fd 0%, #0071b2 100%);
+    background: -webkit-radial-gradient(center, ellipse cover, #02c1fd 0%,#0071b2 100%);
+    background: radial-gradient(ellipse at center, #02c1fd 0%,#0071b2 100%);
+}
+
+$green-color : #10C573;
+$link-color : #0079B8;
+
+$breakpoint-small-device : 380px;
+$breakpoint-mobile : 767px;
+$breakpoint-tablet : 1024px;
+
+//========== ============//
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+a,button{
+    transition: $transition-base;
+    outline:none;
+}
+.login-modal {
+    .modal-dialog{
+        @media(max-width : $breakpoint-tablet){
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        @media(max-width : $breakpoint-mobile){
+            max-width: 450px !important;
+            margin: 30px auto;
+        }
+        @media(max-width : $breakpoint-small-device){
+            max-width: 300px !important;            
+        }
+    }
+    .modal-content {
+        background: transparent;
+        border: 0;
+        position: relative;
+        .close {
+            text-align: right;
+            position: absolute;
+            top: -25px;
+            right: 0;
+        }
+        .modalview {
+            position: relative;
+            display: flex;
+            background-color: $white;
+            @media(max-width : $breakpoint-mobile){
+                display: block;
+            }
+            .modal-left-panel {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                padding: 25px 40px;
+                min-width: 460px;
+                justify-content: center;
+                color: $white;
+                @extend %login-bg;
+                @media(max-width : $breakpoint-mobile){
+                    display: block;
+                }
+                @media(max-width : $breakpoint-tablet){
+                    min-width: inherit;
+                    padding: 25px;                    
+                }
+                h2{
+                    font-size: 32px;
+                    letter-spacing: 1px;
+                    @media(max-width : $breakpoint-mobile){
+                        font-size: 22px;
+                    }
+                    @media(max-width : $breakpoint-tablet){
+                        font-size: 28px;
+                    }
+                }
+                h4{
+                    font-family: 'Alex Brush', cursive;
+                    font-size: 54px;
+                    color: #01527D;
+                    @media(max-width : $breakpoint-mobile){
+                        font-size: 32px;
+                    }
+                    @media(max-width : $breakpoint-tablet){
+                        font-size: 38px;
+                    }
+                }
+            }
+            .modal-right-panel {
+                padding: 32px 30px 20px;
+                text-align: center;
+                .modal-right-panel-content{
+                    @media(max-width : $breakpoint-mobile){
+                        max-width: 300px;
+                        margin : 0 auto;
+                    }
+                }
+                .modal-logo {
+                    margin-bottom: 50px;
+                }
+                .modal-form {
+                    .custom-input {
+                        width: 100%;
+                        border: 1px solid #CCCCCC;
+                        min-width: 280px;
+                        height: 40px;
+                        border-radius: 4px;
+                        padding: 0 10px;
+                        font-size: 14px;
+                        color: #000;
+                        outline: none;
+                        @media(max-width : $breakpoint-mobile){
+                            min-width: inherit;
+                        }
+                    }
+                    .btn {
+                        width: 100%;
+                        background: $green-color;
+                        color: $white;
+                        letter-spacing: 2px;
+                        text-transform: uppercase;
+                        font-weight: 900;
+                        font-size: 13px;
+                        border-bottom: 2px;
+                        padding: 10px;
+                        &:hover{
+                            background: $green;
+                        }
+                    }
+                    .login-check-link {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    span {
+                        padding-left: 6px;
+                        vertical-align: text-bottom;
+                    }
+                    label {
+                        margin: 0;
+                        color: $gray-600;
+                        font-size: 13px;
+                    }
+                    .login-rem-me a {
+                        font-size: 13px;
+                        color: $link-color 2;
+                    }
+                    .login-option {
+                        color: $gray-600;
+                        font-size: 13px;
+                        font-weight: 500;                        
+                    }
+                    .linkeding-option a {
+                        background: $link-color ;
+                        color: $white;
+                        padding: 10px 16px;
+                        display: inline-block;
+                        font-size: 13px;
+                        font-weight: 800;
+                        text-decoration: none;
+                        border-radius: 2px;
+                        &:hover{
+                            background: $blue;
+                        }
+                        svg{
+                            width: 22px;
+                            height: 22px;
+                            margin-right: 5px;
+                        }
+                    }
+                    .if-no-account {
+                        font-size: 13px;
+                        color: $gray-600;
+                        padding-top: 10px;;
+                        a{
+                            color: $link-color ;
+                            font-weight: 800;
+                            text-decoration: none;
+                        }
+                    }   
+                    
+                }
+                
+            }
+        }
+    }
+    
+}
+
+
