@@ -32,7 +32,7 @@ a,button{
             margin: 0 auto;
         }
         @media(max-width : $breakpoint-mobile){
-            max-width: 450px !important;
+            max-width: 390px !important;
             margin: 30px auto;
         }
         @media(max-width : $breakpoint-small-device){
@@ -99,9 +99,11 @@ a,button{
                 padding: 32px 30px 20px;
                 text-align: center;
                 .modal-right-panel-content{
+                    min-width: 280px;
                     @media(max-width : $breakpoint-mobile){
                         max-width: 300px;
                         margin : 0 auto;
+                        min-width: inherit;
                     }
                 }
                 .modal-logo {
@@ -111,7 +113,6 @@ a,button{
                     .custom-input {
                         width: 100%;
                         border: 1px solid #CCCCCC;
-                        min-width: 280px;
                         height: 40px;
                         border-radius: 4px;
                         padding: 0 10px;

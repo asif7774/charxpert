@@ -14,6 +14,11 @@ export class HomeComponent implements OnInit {
     this.modalService.open(content, { centered: true, windowClass: 'login-modal', size: 'lg' });
   }
 
+  signupModal(content) {
+    this.modalService.open(content, { centered: true, windowClass: 'login-modal', size: 'lg' });
+  }
+
+
   ngOnInit(): void {
   }
 
