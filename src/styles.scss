@@ -75,6 +75,7 @@ a,button{
                 h2{
                     font-size: 32px;
                     letter-spacing: 1px;
+                    text-shadow: 0px 0px 1.72px rgba(0, 0, 0, 0.35);
                     @media(max-width : $breakpoint-mobile){
                         font-size: 22px;
                     }
