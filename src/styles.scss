@@ -84,6 +84,7 @@ a,button{
                 h2{
                     font-size: 32px;
                     letter-spacing: 1px;
+                    margin-bottom: 20px;
                     text-shadow: 0px 0px 1.72px rgba(0, 0, 0, 0.35);
                     @media(max-width : $breakpoint-mobile){
                         font-size: 22px;
@@ -95,7 +96,7 @@ a,button{
                 span{
                     svg.icon{
                         width: 322px;
-                        height: 68px;
+                        height: auto;
                         @media(max-width : $breakpoint-mobile){
                             width: 200px;
                             height: 45px;
@@ -204,6 +205,96 @@ a,button{
     
 }
 //================== Signup Process ===============//
+.header-nav {
+    position: relative;  
+    nav.ce-navigation {
+      background: $white;
+      box-shadow: 0px 0px 11.76px 0.24px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 25px;  
+      .ce-nav-search .ce-nav-search-group {
+        display: flex;
+        position: relative;  
+        input {
+          border: 1px solid #CCCCCC;
+          height: 40px;
+          padding: 0 10px 0 34px;
+          font-size: 14px;
+          color: #888888;
+          outline: none;
+          border-radius: 4px;
+        }  
+        span {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 10px;  
+          svg {
+            fill: #999;
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }  
+      .ce-nav-notify {
+        svg {
+          width: 20px;
+          height: 20px;
+          fill: #565682;
+        }  
+        position: relative;
+        margin: 0 45px;
+      }  
+      .ce-nav-right {
+        display: flex;
+        align-items: center;
+      }  
+      .ce-nav-login-user {
+        .usr-profile-pic {
+          width: 36px;
+          height: 36px;
+          overflow: hidden;
+          display: inline-block;
+          border-radius: 50%;
+          border: 1px solid #ccc;
+          margin-right: 10px;  
+          img {
+            max-width: 100%;
+            min-height: 36px;
+          }
+        }  
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        color: #666666;
+      }  
+      .ce-nav-notify span.ce-nav-notify-count {
+        position: absolute;
+        top: -13px;
+        right: -13px;
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        font-size: 11px;
+        color: $white;
+        background: #F38282;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 25px;
+        font-weight: 700;
+      }  
+      .ce-nav-logo {
+        img {
+          max-width: 180px;
+          height: auto;
+        }  
+        span {
+          display: inline-block;
+        }
+      }
+    }
+  }
 .signup-process-main {
     background: #fff;
     max-width: 910px;
@@ -292,8 +383,7 @@ a,button{
                 margin: 0 auto 5px auto;
               }
             svg.icon{
-                width: 12px;
-                height: 12px;
+                width: 13px;
                 fill: $white;
             }
         }
@@ -348,8 +438,12 @@ a,button{
         .btn-update-profile{
             @extend %update-btn-bg;
             font-size: 13px;
-            font-weight: 800;
+            font-weight: 700;
+            border: 0;
             color: $white;
+            padding: 11px 30px;
+            border-radius: 2px;
+            letter-spacing: 1px;
             box-shadow: 0px 0px 15.68px 0.32px rgba(0, 113, 178, 0.4);
             &:hover{
                 box-shadow: 0px 0px 20px 5px rgba(0, 113, 178, 0.6);
