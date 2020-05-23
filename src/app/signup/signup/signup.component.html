@@ -1,0 +1,58 @@
+<div class="signup-process-main">
+    <div class="process-steps-main">
+        <div class="step-view step-done anchor-tag">
+            <span>
+                <svg class="icon" viewBox="0 0 24 24">
+                    <use xlink:href="#check-step"></use>
+                  </svg>
+            </span>
+            Create Account
+        </div>
+        <div class="step-view step-inprogress anchor-tag" (click)="verifyEmail()">
+            <!-- 
+                step-inprogress class for in-progress step 
+                step-pending class for pending step
+                step-done class for done step
+            -->
+            <span>
+                <svg class="icon" viewBox="0 0 16 16">
+                    <use xlink:href="#verify-email"></use>
+                </svg>
+            </span>
+            Verify Email
+        </div>
+        <div class="step-view step-pending anchor-tag" (click)="verifyPhone()">
+            <span>
+                <svg class="icon" viewBox="0 0 18 18">
+                    <use xlink:href="#call"></use>
+                </svg>
+            </span>
+            Verify Phone Number
+        </div>
+    </div>
+    <div class="process-step-info" *ngIf="emailVerification">
+        <h4>Your account has been created successfully, Please verify your email address</h4>
+        <p>We’ve sent you a verification link to you email address.<br />To continue please click on that link to verify your registered email address. You will be redirected to this page again when you click the link</p>
+        <div class="process-msg">
+            Didn’t recieved the link? <span class="anchor-tag">Send again</span>
+        </div>
+    </div>
+    <div class="process-step-info" *ngIf="mobVerification">
+        <h4>You’ve successfully verified your registered email address. Please verify your phone number </h4>
+        <p>An OTP has been sent to your registered mobile number.<br />Please enter OTP below to verify your nuber</p>
+        <div class="otp-group">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+            <input type="text" maxlength="1">
+        </div>
+        <div class="process-msg">
+            Didn’t recieved the OTP? <span class="anchor-tag">Send again</span>
+        </div>
+    </div>
+    <!-- <div class="process-step-info"> //Final Message
+        <h4>Congratulations!!</h4>
+        <p>You’ve successfully verified your phone number.<br />Now update your profile and get started.</p>
+        <button class="btn btn-update-profile mt-3">UPDATE PROFILE</button>
+    </div> -->
+</div>

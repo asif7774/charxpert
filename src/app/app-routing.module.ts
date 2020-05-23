@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SignupComponent } from './home/signup/signup.component';
-import { SignupProcessComponent } from './home/signup-process/signup-process.component';
 
 
 const routes: Routes = [  
@@ -11,9 +9,8 @@ const routes: Routes = [
   },
   {
     path: 'verify-email',
-    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-    component: SignupProcessComponent,
-    data: { showHeader: false, showSidebar: false, showFooter:false,  compactLayout:false }
+    loadChildren: () => import('./signup/signup.module').then(m => m.SignupModule),
+    data: { showHeader: true, showSidebar: false, showFooter:false,  compactLayout:false }
   }
 ]
 

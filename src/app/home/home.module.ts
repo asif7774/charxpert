@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
-import { SignupProcessComponent } from './signup-process/signup-process.component';
+import { LoginPopupComponent } from './login-popup/login-popup.component';
+import { SignupPopupComponent } from './signup-popup/signup-popup.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, LoginComponent, SignupComponent, SignupProcessComponent],
+  declarations: [HomeComponent, LoginPopupComponent, SignupPopupComponent],
   imports: [
     CommonModule,
     HomeRoutingModule

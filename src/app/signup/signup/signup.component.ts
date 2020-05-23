@@ -7,7 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
+  emailVerification:boolean = true;
+  mobVerification:boolean = false;
+
   constructor() { }
+
+  verifyEmail(){
+    this.emailVerification = true;
+    this.mobVerification = false;
+  }
+  verifyPhone(){
+    this.mobVerification = true;
+    this.emailVerification = false;
+  }
 
   ngOnInit(): void {
   }
