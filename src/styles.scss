@@ -25,6 +25,10 @@ a,button{
     transition: $transition-base;
     outline:none;
 }
+.anchor-tag{
+    cursor: pointer;
+    color: $link-color;
+}
 .login-modal {
     .modal-dialog{
         @media(max-width : $breakpoint-tablet){
@@ -83,15 +87,14 @@ a,button{
                         font-size: 28px;
                     }
                 }
-                h4{
-                    font-family: 'Alex Brush', cursive;
-                    font-size: 54px;
-                    color: #01527D;
-                    @media(max-width : $breakpoint-mobile){
-                        font-size: 32px;
-                    }
-                    @media(max-width : $breakpoint-tablet){
-                        font-size: 38px;
+                span{
+                    svg.icon{
+                        width: 322px;
+                        height: 68px;
+                        @media(max-width : $breakpoint-mobile){
+                            width: 200px;
+                            height: 45px;
+                        }
                     }
                 }
             }
@@ -150,7 +153,7 @@ a,button{
                         color: $gray-600;
                         font-size: 13px;
                     }
-                    .login-rem-me a {
+                    .login-rem-me .anchor-tag {
                         font-size: 13px;
                         color: $link-color 2;
                     }
@@ -159,7 +162,7 @@ a,button{
                         font-size: 13px;
                         font-weight: 500;                        
                     }
-                    .linkeding-option a {
+                    .linkeding-option .signin-linkeding {
                         background: $link-color ;
                         color: $white;
                         padding: 10px 16px;
@@ -181,7 +184,7 @@ a,button{
                         font-size: 13px;
                         color: $gray-600;
                         padding-top: 10px;;
-                        a{
+                        .anchor-tag {
                             color: $link-color ;
                             font-weight: 800;
                             text-decoration: none;

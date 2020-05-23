@@ -1,20 +1,39 @@
 <button class="btn btn-primary" (click)="loginModal(openLogin)">Login</button> 
-<button class="btn btn-primary" (click)="signupModal(openSignup)">Signup</button> 
+<button class="btn btn-primary" (click)="signupModal(openLogin)">Signup</button> 
 
 <ng-template #openLogin let-modal>
-    <div class="close"><a href="javascript:void(0);" (click)="modal.close()">
+    <div class="close">
+        <a href="javascript:void(0);" (click)="modal.close()">
             <svg viewBox="0 0 475 475" class="icon">
                 <use xlink:href="#close"></use>
             </svg>
-        </a></div>
-    <app-login></app-login>
-</ng-template>
+        </a>
+    </div>
 
-<ng-template #openSignup let-modal>
-    <div class="close"><a href="javascript:void(0);" (click)="modal.close()">
-            <svg viewBox="0 0 475 475" class="icon">
-                <use xlink:href="#close"></use>
-            </svg>
-        </a></div>
-    <app-signup></app-signup>
+    <div class="modalview">
+        <div class="modal-left-panel">
+            <div class="modal-left-panel-content">
+                <h2>TIMELY EXPERT ADVICE</h2>
+                <span>
+                    <svg class="icon">
+                        <use xlink:href="#anytime-text"></use>
+                    </svg>
+                </span>
+            </div>
+        </div>
+        <div class="modal-right-panel">
+            <div class="modal-right-panel-content">
+                <div class="modal-logo">
+                    <img src="assets/images/home/login-logo.png" alt="chatXpert">
+                </div>
+                <div class="modal-form" *ngIf="loginShow">
+                    <app-login></app-login>
+                </div>
+                <div class="modal-form" *ngIf="signupShow">
+                    <app-signup></app-signup>
+                </div>
+            </div>
+    
+        </div>
+    </div>
 </ng-template>
