@@ -15,6 +15,12 @@
     background: -webkit-linear-gradient(-45deg, #0071b2 0%,#02b8f5 100%);
     background: linear-gradient(135deg, #0071b2 0%,#02b8f5 100%);
 }
+%sidebar-bg{
+background: #0071b2;
+background: -moz-linear-gradient(-45deg, #0071b2 0%, #02b8f5 100%);
+background: -webkit-linear-gradient(-45deg, #0071b2 0%,#02b8f5 100%);
+background: linear-gradient(135deg, #0071b2 0%,#02b8f5 100%);
+}
 $green-color : #10C573;
 $link-color : #0079B8;
 
@@ -34,6 +40,21 @@ a,button{
     cursor: pointer;
     color: $link-color;
 }
+.content{
+  padding: 30px 30px 0 30px;
+  @media(max-width : $breakpoint-mobile){
+	  display: block !important;
+  }
+  .content-block {
+    flex-basis: calc(100% - 180px);
+    padding-left: 30px;
+    margin: 0 auto;
+    @media(max-width : $breakpoint-mobile){
+      padding-left: 0;
+    }
+  }
+}
+
 .login-modal {
     .modal-dialog{
         @media(max-width : $breakpoint-tablet){
@@ -450,5 +471,84 @@ a,button{
             }
         }
     }
-    
   }
+  //========== Sidebar ==========//
+  .cx-aside {
+    max-height: calc(100vh - 80px);
+    width: 180px;
+    background: $white;
+    overflow-y: auto;
+    box-shadow: 0px 0px 11.76px 0.24px rgba(0, 0, 0, 0.1);
+    .sidebar-main{
+      ul{
+        list-style:none;
+        margin:0;
+        padding:0;
+        li{
+          text-align: center;
+          padding: 34px 10px;
+          border-bottom: 1px solid #ECF5F7;
+          color: #999;
+          &:last-child{
+            border-bottom: 0;
+          }
+          &:hover{
+            @extend %sidebar-bg;
+            color: $white;
+          }
+          h5{
+            margin-bottom:0;
+            margin-top: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+          }
+        }
+        .active{
+          @extend %sidebar-bg;
+          color: $white;
+        }
+      }
+    }
+}
+//Relogin Page
+.relogin-main {
+  background: #fff;
+  max-width: 340px;
+  margin: 0 auto;
+  position: relative;
+  padding: 35px 30px;
+  box-shadow: 0px 0px 11.76px 0.24px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 40px;
+  }
+  .relogin-form .custom-input {
+    width: 100%;
+    border: 1px solid #CCCCCC;
+    height: 40px;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 14px;
+    color: #000;
+    outline: none;    
+  }
+  button {
+    background: $green-color;
+    color: $white;
+    width: 100%;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    font-size: 13px;
+    border-bottom: 2px;
+    padding: 10px;
+    &:hover{
+      background: $green;
+      color: $white;
+    }
+  }
+}

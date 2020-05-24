@@ -1,17 +1,34 @@
-<div class="sidebar-inner" id="sidebar-inner" fxLayout="column" fxFlex>
-    <a class="navbar-brand ml-auto mr-auto my-2" routerLink="/"><img src="./../../../assets/images/logo/OptiProERP.png" title="OptiPro-ERP-Admin Portal" /></a>
-    <nav class="main-nav ">
+    <div class="sidebar-main">
         <ul>
-            <ng-container *ngFor="let item of navList">
-                <li *ngIf="item.permission" routerLinkActive="active">
-                    <a *ngIf="item.itemNav" [attr.title]="item.itemName" [routerLink]="item.itemNav" routerLinkActive="active" class="sidebar-link" (click)="sidebarCloseMobile()">
-                        <svg [attr.viewBox]="item.itemIconSize" class="sidebar-link-icon">
-                            <use [attr.xlink:href]="item.itemIcon"></use>
-                        </svg>
-                        <span>{{item.itemName}}</span>
-                    </a>
-                </li>
-            </ng-container>
+            <li class="anchor-tag">
+                <svg viewBox="0 0 128 128" class="icon">
+                    <use xlink:href="#user-avatar"></use>
+                </svg>
+                <h5>Dashboard</h5>
+            </li>
+            <li class="anchor-tag">
+                <svg viewBox="0 0 128 128" class="icon">
+                    <use xlink:href="#user-avatar"></use>
+                </svg>
+                <h5>Inbox</h5>
+            </li>   
+            <li class="anchor-tag">
+                <svg viewBox="0 0 128 128" class="icon">
+                    <use xlink:href="#user-avatar"></use>
+                </svg>
+                <h5>Calls</h5>
+            </li>
+            <li class="anchor-tag">
+                <svg viewBox="0 0 128 128" class="icon">
+                    <use xlink:href="#user-avatar"></use>
+                </svg>
+                <h5>Dashboard</h5>
+            </li>
+            <li class="anchor-tag">
+                <svg viewBox="0 0 128 128" class="icon">
+                    <use xlink:href="#user-avatar"></use>
+                </svg>
+                <h5>Setting & Profile</h5>
+            </li>
         </ul>
-    </nav>
-</div>
+    </div>

@@ -11,6 +11,11 @@ const routes: Routes = [
     path: 'verify-email',
     loadChildren: () => import('./signup/signup.module').then(m => m.SignupModule),
     data: { showHeader: true, showSidebar: false, showFooter:false,  compactLayout:false }
+  },
+  {
+    path: 'user-profile',
+    loadChildren: () => import('./user-profile/user-profile.module').then(m => m.UserProfileModule),
+    data: { showHeader: true, showSidebar: true, showFooter:false,  compactLayout:false }
   }
 ]
 
