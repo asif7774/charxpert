@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarEvent, CalendarView } from 'angular-calendar';
 import { setHours, setMinutes } from 'date-fns';
-import { colors } from '../../calendar-utilities/colors';
 
 @Component({
   selector: 'app-schedule',
@@ -17,13 +16,11 @@ export class ScheduleComponent implements OnInit {
   events: CalendarEvent[] = [
     {
       title: 'No event end date',
-      start: setHours(setMinutes(new Date(), 0), 3),
-      color: colors.blue,
+      start: setHours(setMinutes(new Date(), 0), 3)
     },
     {
       title: 'No event end date',
-      start: setHours(setMinutes(new Date(), 0), 5),
-      color: colors.yellow,
+      start: setHours(setMinutes(new Date(), 0), 5)
     },
   ];
 
