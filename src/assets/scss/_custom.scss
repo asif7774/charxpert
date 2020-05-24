@@ -31,12 +31,6 @@ html, body{
 .no-sidebar .navbar-toggler{
   display: none !important;
 }
-body.no-header .content{
-  max-height: 100vh !important;
-}
-body.with-header .content{
-  max-height: calc(100vh - 40px) !important;
-}
 //sidebar
 app-sidebar.toggle  {
   @media screen and (max-width:991px){ 

@@ -16,7 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppRoutingModule,
     CustomLayoutModule,
     FlexLayoutModule,
-    NgbModule
+    NgbModule    
   ],
   providers: [],
   bootstrap: [AppComponent]

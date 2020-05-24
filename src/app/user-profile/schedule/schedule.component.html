@@ -26,7 +26,10 @@
     </div>
     <div class="profile-setting-body">
         <div class="proset-schedule">
-            Schedule conent
+            <mwl-calendar-month-view
+            [viewDate]="viewDate"
+            [events]="events">
+            </mwl-calendar-month-view>
         </div><!-- proset-schedule -->
         <div class="proset-profile">
 
