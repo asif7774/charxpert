@@ -1,1 +1,50 @@
-<p>schedule works!</p>
+<div class="profile-setting-main">
+    <div class="profile-setting-head">
+        <h3>Setting & Profile</h3>
+        <div class="pro-set-tabs">
+            <ul>
+                <li class="active">
+                    <span class="anchor-tag">Update My Schedule</span>
+                </li>
+                <li>
+                    <span class="anchor-tag">Update My Profile</span>
+                </li>
+                <li>
+                    <span class="anchor-tag">Topics & Notifications</span>
+                </li>
+                <li>
+                    <span class="anchor-tag">Payment Related</span>
+                </li>
+                <li>
+                    <span class="anchor-tag">Transactions</span>
+                </li>
+                <li>
+                    <span class="anchor-tag">Other Preferences</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="profile-setting-body">
+        <div class="proset-schedule">
+            <mwl-calendar-month-view
+            [viewDate]="viewDate"
+            [events]="events">
+            </mwl-calendar-month-view>
+        </div><!-- proset-schedule -->
+        <div class="proset-profile">
+
+        </div><!-- proset-profile -->
+        <div class="proset-topics">
+
+        </div><!-- proset-topics -->
+        <div class="proset-payment">
+
+        </div><!-- proset-payment -->
+        <div class="proset-transaction">
+
+        </div><!-- proset-transaction -->
+        <div class="proset-preferences">
+
+        </div><!-- proset-preferences -->
+    </div>
+</div>

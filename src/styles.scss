@@ -16,10 +16,16 @@
     background: linear-gradient(135deg, #0071b2 0%,#02b8f5 100%);
 }
 %sidebar-bg{
-background: #0071b2;
-background: -moz-linear-gradient(-45deg, #0071b2 0%, #02b8f5 100%);
-background: -webkit-linear-gradient(-45deg, #0071b2 0%,#02b8f5 100%);
-background: linear-gradient(135deg, #0071b2 0%,#02b8f5 100%);
+  background: #0071b2;
+  background: -moz-linear-gradient(-45deg, #0071b2 0%, #02b8f5 100%);
+  background: -webkit-linear-gradient(-45deg, #0071b2 0%,#02b8f5 100%);
+  background: linear-gradient(135deg, #0071b2 0%,#02b8f5 100%);
+}
+%green-gradint{
+  background: #11c473;
+  background: -moz-linear-gradient(-45deg, #11c473 0%, #0ed193 100%);
+  background: -webkit-linear-gradient(-45deg, #11c473 0%,#0ed193 100%);
+  background: linear-gradient(135deg, #11c473 0%,#0ed193 100%);
 }
 $green-color : #10C573;
 $link-color : #0079B8;
@@ -38,6 +44,7 @@ a,button{
 }
 .anchor-tag{
     cursor: pointer;
+    transition: $transition-base;
     color: $link-color;
 }
 .content{
@@ -474,10 +481,8 @@ a,button{
   }
   //========== Sidebar ==========//
   .cx-aside {
-    max-height: calc(100vh - 80px);
     width: 180px;
     background: $white;
-    overflow-y: auto;
     box-shadow: 0px 0px 11.76px 0.24px rgba(0, 0, 0, 0.1);
     .sidebar-main{
       ul{
@@ -551,4 +556,69 @@ a,button{
       color: $white;
     }
   }
+}
+// Profile Setting
+.profile-setting-main{
+  box-shadow: 0px 0px 11.76px 0.24px rgba(0, 0, 0, 0.1);
+  background-color: $white;
+  .profile-setting-head{
+    padding: 15px 15px 0 15px;
+    color: $white;
+    box-shadow: 0px 0px 15.68px 0.32px rgba(17, 196, 115, 0.4);
+    @extend %green-gradint;
+    h3{
+      margin: 0;
+      font-size: 30px;
+      font-weight: 300;
+    }
+    .pro-set-tabs {
+      margin-top: 25px;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        li {
+          padding: 0 10px;
+          span {
+          font-size: 15px;
+          color: #fff;
+          font-weight: 300;
+          display: inline-block;
+          padding-bottom:12px;
+          position: relative;
+          &:after{
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;     
+            width: 40px;
+            height: 4px;
+            @extend %sidebar-bg;     
+            margin: 0 auto;
+            display: none;
+          }
+        } 
+      }
+        li.active{          
+          span{
+            font-weight: 500;
+            &:after{
+              display: block;
+            }
+          }
+        }
+        li:hover span{
+          &:after{
+            display: block;
+          }
+        }
+      }      
+    }
+  }
+}
+.profile-setting-body{
+  padding: 30px 25px;
 }
