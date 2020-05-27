@@ -1,31 +1,59 @@
 <div class="modal-form">
-    <form action="">
+    <form action="" #signupform = "ngForm">
         <div class="form-group">
-           <input type="text" placeholder="Full Name" class="custom-input">
+           <input type="text" name="FirstName" id="FirstName" placeholder="First Name" class="custom-input" pattern="[a-zA-Z ]*" required [(ngModel)]="signupUserDetails.FirstName" #firstname="ngModel">
+           <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched || signupform.submitted)"
+            class="alert alert-danger">
+            <div *ngIf="firstname.errors.required">First Name is required</div>
+            <li *ngIf="firstname.hasError('pattern')">Please enter only alphabets</li>
+        </div>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="User Name" class="custom-input">
+            <input type="text" name="LastName" id="LastName" placeholder="Last Name" class="custom-input" pattern="[a-zA-Z ]*" required [(ngModel)]="signupUserDetails.LastName" #lastname="ngModel">
+            <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched || signupform.submitted)"
+                class="alert alert-danger">
+                <div *ngIf="lastname.errors.required">Last Name is required</div>
+                <li *ngIf="lastname.hasError('pattern')">Please enter only alphabets</li>
+            </div>
+         </div>
+        <div class="form-group">
+            <input type="text" placeholder="E-mail" name="E-Mail" id="E-Mail" class="custom-input" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required [(ngModel)]="signupUserDetails.Email" #email="ngModel">
+            <div *ngIf="email.invalid && (email.dirty || email.touched || signupform.submitted)"
+            class="alert alert-danger">
+            <div *ngIf="email.errors.required">Email is required</div>
+            <li *ngIf="email.hasError('pattern')">This value should be a valid email.</li>
+            </div>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="E-mail" class="custom-input">
-        </div>
-        <div class="form-group">
-            <input type="text" placeholder="Password" class="custom-input">
+            <input type="password" placeholder="Password" name="Password" id="Password" class="custom-input" pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]*" required [(ngModel)]="signupUserDetails.Password" #password="ngModel">
+            <div *ngIf="password.invalid && (password.dirty || password.touched || signupform.submitted)"
+            class="alert alert-danger">
+            <div *ngIf="password.errors.required">Password is required</div>
+            <li *ngIf="password.hasError('pattern')">Please enter valid Password.</li>
+            </div>
         </div>
         <div class="row">
             <div class="col-sm-5">
                 <div class="form-group">
-                    <input type="text" placeholder="Country" class="custom-input">
+                    <input type="text" placeholder="Country" name="Country" id="Country" class="custom-input" required [(ngModel)]="signupUserDetails.Country" #country="ngModel">
+                    <div *ngIf="country.invalid && (country.dirty || country.touched || signupform.submitted)"
+                        class="alert alert-danger">
+                        <div *ngIf="country.errors.required">Country is required</div>
+                    </div>
                 </div>
             </div>
             <div class="col-sm-7">
                 <div class="form-group">
-                    <input type="text" placeholder="Phone Number" class="custom-input">
+                    <input type="number" placeholder="Phone Number" name="PhoneNumber" id="PhoneNumber"  class="custom-input" required [(ngModel)]="signupUserDetails.PhoneNumber" #phonenumber="ngModel">
+                    <div *ngIf="phonenumber.invalid && (phonenumber.dirty || phonenumber.touched || signupform.submitted)"
+                        class="alert alert-danger">
+                        <div *ngIf="phonenumber.errors.required">Phone Number is required</div>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="form-group">
-            <button class="btn btn-block btn-green">Sign Up</button>
+            <button class="btn btn-block btn-green" [disabled]="!signupform.form.valid" (click) = "signUpUser()">Sign Up</button>
         </div>
         <div class="if-no-account">
             Already have an account? <span class="anchor-tag">Signin Now</span>

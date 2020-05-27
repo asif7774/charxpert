@@ -19,8 +19,8 @@ export class AppComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.showHeader = this.activatedRoute.firstChild.snapshot.data.showHeader !== false;
         this.showSidebar = this.activatedRoute.firstChild.snapshot.data.showSidebar !== false;
-        this.showFooter = this.activatedRoute.firstChild.snapshot.data.showFooter !== false;        
-        this.compactLayout = this.activatedRoute.firstChild.snapshot.data.compactLayout !== false;        
+        this.showFooter = this.activatedRoute.firstChild.snapshot.data.showFooter !== false;
+        this.compactLayout = this.activatedRoute.firstChild.snapshot.data.compactLayout !== false;
         console.log('Header : ' + this.showHeader);
         console.log('SideBar : ' + this.showSidebar);
         console.log('Footer : ' + this.showFooter);
