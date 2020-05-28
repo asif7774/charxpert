@@ -47,6 +47,10 @@ a,button{
     transition: $transition-base;
     color: $link-color;
 }
+.text-error {
+  color: #f00;
+  font-size: 11px;
+}
 .content{
   padding: 30px 30px 0 30px;
   @media(max-width : $breakpoint-mobile){
