@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/_services/Authentication.service';
-import { SignUpUserModel } from 'src/app/Models/SignUpUserModel';
+import { SignUpUserModel } from 'src/app/_models/SignUpUserModel';
 import { HttpErrorResponse } from '@angular/common/http';
+import { CommonService } from 'src/app/_services/Common/Common.service';
 
 @Component({
   selector: 'app-signup-popup',
@@ -10,17 +11,9 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class SignupPopupComponent implements OnInit {
   signupUserDetails: SignUpUserModel = new SignUpUserModel();
-  constructor(private authService: AuthenticationService) {}
+  constructor(private authService: AuthenticationService, private common: CommonService) {}
 
   ngOnInit(): void {
-    // this.signupForm = this.formBuilder.group({
-    //   FirstName: [null,Validators.required],
-    //   LastName: [null,Validators.required],
-    //   E-Mail: [null, [Validators.required,Validators.email]],
-    //   Password: [null,Validators.required],
-    //   Country: [null,Validators.required],
-    //   PhoneNumber: [null,Validators.required]
-    // });
   }
 
   /**
@@ -28,12 +21,19 @@ export class SignupPopupComponent implements OnInit {
    */
   signUpUser() {
     this.authService.SignUpUser(this.signupUserDetails).subscribe((data) => {
-      alert('User Registered successfully. please check email for verification.');
-      console.log(data);
+      if (data) {
+        alert('User Registered successfully. please check email for verification.');
+        console.log(data);
+        this.common.change_routing('');
+      }
     },
     (err: HttpErrorResponse) => {
       alert('Something went wrong. please check console log for more detail.');
       console.log(err);
     });
+  }
+
+  OnSignInClick() {
+    this.common.change_routing('');
   }
 }
