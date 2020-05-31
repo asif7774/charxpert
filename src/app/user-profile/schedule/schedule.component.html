@@ -148,10 +148,9 @@
             <div class="notification-setting-main">
                 <div class="notify-set-left">
                     <h3>My Topics of Interest</h3>
-                    <!-- 
-                        Can we use : ngx-chips: https://www.npmjs.com/package/ngx-chips 
-                        Or let me know if its custom
-                    -->
+                    <div class="chipset-theme">
+                        <tag-input placeholder="Add Accomplishments"></tag-input>
+                    </div>
                 </div>
                 <div class="notify-set-right">
                     <div class="notify-setting">
@@ -482,7 +481,41 @@
 
         </div><!-- proset-transaction -->
         <div class="proset-preferences" *ngIf="ProPreferencesShow">
-
+            <div class="preference-block">
+                <h4>As an Expert</h4>
+                <p>Companies or Industries types that I cannot consult with</p>
+                <div class="chipset-theme">
+                    <tag-input placeholder="Add Accomplishments"></tag-input>
+                </div>
+            </div>
+            <div class="preference-block">
+                <h4>As an Expert</h4>
+                <p>Companies or Industries types that I cannot consult with</p>
+                <!-- <div class="preferences-documents">
+                    <div class="pref-docs">
+                        <input type="file">
+                        <span>Browse Document</span>
+                    </div>
+                    <div class="files-names">
+                        <label class="file-tag">
+                            NDA-XYZ-Company.pdf 
+                            <span>
+                                <svg viewBox="0 0 475 475" class="icon">
+                                    <use xlink:href="#close"></use>
+                                </svg>
+                            </span>
+                        </label>
+                        <label class="file-tag">
+                            NDA-XYZ-Company.pdf 
+                            <span>
+                                <svg viewBox="0 0 475 475" class="icon">
+                                    <use xlink:href="#close"></use>
+                                </svg>
+                            </span>
+                        </label>
+                    </div>
+                </div> -->
+            </div>
         </div><!-- proset-preferences -->
     </div>
 </div>
