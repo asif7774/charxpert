@@ -3,36 +3,34 @@
         <h3>Setting & Profile</h3>
         <div class="pro-set-tabs">
             <ul>
-                <li class="active">
-                    <span class="anchor-tag">Update My Schedule</span>
+                <li [ngClass]="ProScheduleShow ? 'active': ''">
+                    <span class="anchor-tag" (click)="ProSchedule()">Update My Schedule</span>
                 </li>
-                <li>
-                    <span class="anchor-tag">Update My Profile</span>
+                <li [ngClass]="ProMyprofileShow ? 'active': ''">
+                    <span class="anchor-tag" (click)="ProMyprofile()">Update My Profile</span>
                 </li>
-                <li>
-                    <span class="anchor-tag">Topics & Notifications</span>
+                <li [ngClass]="ProNotificationShow ? 'active': ''">
+                    <span class="anchor-tag" (click)="ProNotification()">Topics & Notifications</span>
                 </li>
-                <li>
-                    <span class="anchor-tag">Payment Related</span>
+                <li [ngClass]="ProPaymentShow ? 'active': ''">
+                    <span class="anchor-tag" (click)="ProPayment()">Payment Related</span>
                 </li>
-                <li>
-                    <span class="anchor-tag">Transactions</span>
+                <li [ngClass]="ProTransactionShow ? 'active': ''">
+                    <span class="anchor-tag" (click)="ProTransaction()">Transactions</span>
                 </li>
-                <li>
-                    <span class="anchor-tag">Other Preferences</span>
+                <li [ngClass]="ProPreferencesShow ? 'active': ''">
+                    <span class="anchor-tag" (click)="ProPreferences()">Other Preferences</span>
                 </li>
             </ul>
         </div>
     </div>
     <div class="profile-setting-body">
-        <!-- <div class="proset-schedule">
-            <mwl-calendar-month-view
-            [viewDate]="viewDate"
-            [events]="events">
+        <div class="proset-schedule" *ngIf="ProScheduleShow">
+            <mwl-calendar-month-view [viewDate]="viewDate" [events]="events">
             </mwl-calendar-month-view>
-        </div> -->
+        </div>
         <!-- proset-schedule -->
-        <div class="proset-profile">
+        <div class="proset-profile" *ngIf="ProMyprofileShow">
             <div class="usr-profile-details">
                 <div class="usr-pro-left">
                     <div class="usr-pro-img">
@@ -70,7 +68,8 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="">User Name/Display Name</label>
-                                        <input type="text" class="custom-form-control" placeholder="User Name/Display Name" />
+                                        <input type="text" class="custom-form-control"
+                                            placeholder="User Name/Display Name" />
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -105,21 +104,24 @@
                                         <div class="col-sm-7">
                                             <div class="form-group">
                                                 <label for="">Phone Number</label>
-                                                <input type="text" class="custom-form-control" placeholder="Phone Number" />
+                                                <input type="text" class="custom-form-control"
+                                                    placeholder="Phone Number" />
                                             </div>
                                         </div>
                                     </div>
-                                </div> 
+                                </div>
                                 <div class="col-sm-12">
                                     <div class="if-other-pro form-group">
-                                        Your Profile <span>(you can use either your linkedin profile or official email address)</span>
+                                        Your Profile <span>(you can use either your linkedin profile or official email
+                                            address)</span>
                                     </div>
-                                </div>  
+                                </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label for="">Linkedin Profile URL</label>
                                         <div class="import-group">
-                                            <input type="text" class="custom-form-control" placeholder="Linkedin Profile URL" />
+                                            <input type="text" class="custom-form-control"
+                                                placeholder="Linkedin Profile URL" />
                                             <span class="anchor-tag">Import Profile</span>
                                         </div>
                                     </div>
@@ -127,30 +129,282 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label for="">Your official email ID</label>
-                                        <input type="text" class="custom-form-control" placeholder="Your official email ID" />
+                                        <input type="text" class="custom-form-control"
+                                            placeholder="Your official email ID" />
                                     </div>
-                                </div>  
+                                </div>
                                 <div class="col-sm-12">
                                     <div class="form-group text-right">
                                         <button class="btn btn-save">SAVE AND NEXT</button>
                                     </div>
-                                </div>                             
+                                </div>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div><!-- proset-profile -->
-        <div class="proset-topics">
-
+        <div class="proset-topics" *ngIf="ProNotificationShow">
+            <div class="notification-setting-main">
+                <div class="notify-set-left">
+                    <h3>My Topics of Interest</h3>
+                    <!-- 
+                        Can we use : ngx-chips: https://www.npmjs.com/package/ngx-chips 
+                        Or let me know if its custom
+                    -->
+                </div>
+                <div class="notify-set-right">
+                    <div class="notify-setting">
+                        <div class="nsetting-block">
+                            <div class="nsetting-title">
+                                SMS Reminders
+                            </div>
+                            <div class="nsetting-title-toggle">
+                                <label class="notify-toggle">
+                                    <input type="checkbox" id="smsReminder" name="smsReminder">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="nsetting-block">
+                            <div class="nsetting-title">
+                                Email Reminders
+                            </div>
+                            <div class="nsetting-title-toggle">
+                                <label class="notify-toggle">
+                                    <input type="checkbox" id="emailReminder" name="emailReminder">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="nsetting-block">
+                            <div class="nsetting-title">
+                                New Query Notifications
+                            </div>
+                            <div class="nsetting-title-toggle">
+                                <label class="notify-toggle">
+                                    <input type="checkbox" id="queryNotification" name="queryNotification">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="nsetting-block">
+                            <div class="nsetting-title">
+                                Would you like to receive invites from other clients who need your expertise on issues
+                                they are dealing with?
+                            </div>
+                            <div class="nsetting-title-toggle">
+                                <label class="notify-toggle">
+                                    <input type="checkbox" id="receiveInvites" name="receiveInvites">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div><!-- proset-topics -->
-        <div class="proset-payment">
-
+        <div class="proset-payment" *ngIf="ProPaymentShow">
+            <form action="" name="" id="">
+                <div class="payment-main">
+                    <div class="pay-method">
+                        <div class="block-title">
+                            <h3>Payment Methods</h3>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label for="">Select a Payment Method</label>
+                                        <input type="text" class="custom-form-control" name="payMethod"
+                                            placeholder="Debit / Credit Card" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row pay-card-billing">
+                        <div class="col-sm-6">
+                            <div class="pay-card-info">
+                                <div class="block-title">
+                                    <h3>Card Information</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">Account Hoder’s Name</label>
+                                            <input type="text" class="custom-form-control" name="accHolder"
+                                                placeholder="Name" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">Card Number</label>
+                                            <div class="visa-card-info">
+                                                <input type="text" class="custom-form-control" name="cardNo"
+                                                    placeholder="Name" />
+                                                <span>
+                                                    <svg class="icon" viewBox="0 0 402 258">
+                                                        <use xlink:href="#visa"></use>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Expires on</label>
+                                            <input type="text" class="custom-form-control" name="expDate"
+                                                placeholder="Date" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Security Code</label>
+                                            <input type="text" class="custom-form-control" name="secCode"
+                                                placeholder="Security Code" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="pay-billing-address">
+                                <div class="block-title">
+                                    <h3>Billing Address</h3>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">Address</label>
+                                            <input type="text" class="custom-form-control" name="address"
+                                                placeholder="Address" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Country</label>
+                                            <input type="text" class="custom-form-control" name="country"
+                                                placeholder="Country" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">State</label>
+                                            <input type="text" class="custom-form-control" name="state"
+                                                placeholder="State" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">City</label>
+                                            <input type="text" class="custom-form-control" name="city"
+                                                placeholder="City" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Zip</label>
+                                            <input type="text" class="custom-form-control" name="zipCode"
+                                                placeholder="Zip" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pay-add-account">
+                        <div class="block-title">
+                            <h3>Add Bank Account to receive refund / payment</h3>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">Account No.</label>
+                                    <input type="text" class="custom-form-control" name="accNo"
+                                        placeholder="Account No." />
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">Account Type</label>
+                                    <select class="custom-form-control" name="accNo">
+                                        <option value="">Saving Account</option>
+                                        <option value="">Current Account</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">Account Holder Name</label>
+                                    <input type="text" class="custom-form-control" name="accName"
+                                        placeholder="Account No." />
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">Bank Name</label>
+                                    <select class="custom-form-control" name="bankName">
+                                        <option value="">Select Bank Name</option>
+                                        <option value="">ICICI</option>
+                                        <option value="">HDFC</option>
+                                        <option value="">SBI</option>
+                                        <option value="">BOI</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">SWIFT Code / Routing No.</label>
+                                    <input type="text" class="custom-form-control" name="swfNo"
+                                        placeholder="SWIFT Code / Routing No." />
+                                </div>
+                            </div>
+                            <div class="col-sm-9">
+                                <div class="form-group">
+                                    <label for="">Bank Address</label>
+                                    <input type="text" class="custom-form-control" name="bankAdddress"
+                                        placeholder="Address" />
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">Country</label>
+                                    <input type="text" class="custom-form-control" name="RefCountry"
+                                        placeholder="Country" />
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">State</label>
+                                    <input type="text" class="custom-form-control" name="RefState"
+                                        placeholder="Country" />
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">City</label>
+                                    <input type="text" class="custom-form-control" name="RefCity"
+                                        placeholder="Country" />
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">Zip</label>
+                                    <input type="text" class="custom-form-control" name="RefZip"
+                                        placeholder="Country" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pay-submit text-right">
+                        <button class="btn btn-save">Save and next</button>
+                    </div>
+                </div>
+            </form>
         </div><!-- proset-payment -->
-        <div class="proset-transaction">
+        <div class="proset-transaction" *ngIf="ProTransactionShow">
 
         </div><!-- proset-transaction -->
-        <div class="proset-preferences">
+        <div class="proset-preferences" *ngIf="ProPreferencesShow">
 
         </div><!-- proset-preferences -->
     </div>

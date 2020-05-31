@@ -19,6 +19,7 @@
     overflow: auto;
     display: flex;
     align-items: flex-start;
+    height: 100%;
 }
 input:-internal-autofill-selected {
     background-color: #fff !important;

@@ -583,6 +583,9 @@ a,button{
         list-style: none;
         display: flex;
         justify-content: space-between;
+        @media(max-width : $breakpoint-tablet){
+          overflow-y: auto;
+        }
         li {
           padding: 0 10px;
           span {
@@ -592,6 +595,9 @@ a,button{
           display: inline-block;
           padding-bottom:12px;
           position: relative;
+          @media(max-width : $breakpoint-tablet){
+            white-space: nowrap;
+          }
           &:after{
             content: "";
             position: absolute;
@@ -641,6 +647,9 @@ a,button{
     padding: 0 20px 20px;
     margin-top: 80px;
     text-align: center;
+    @media(max-width : $breakpoint-mobile){
+      margin-bottom: 30px;
+    }
     .usr-pro-img {
       width: 120px;
       height: 120px;
@@ -828,5 +837,153 @@ a,button{
   .btn-save{
     @extend %update-btn-bg;
     color: $white;
+    border: 0;
   }
+}
+.notification-setting-main {
+  display: flex;
+  justify-content: space-between;
+  @media(max-width : $breakpoint-mobile){
+    display: block;
+  }
+  .notify-set-left {
+    flex-basis: 45%;
+    background: #F4F8F9;
+    border: 1px solid #DDE6E8;
+    padding: 15px 20px;
+    @media(max-width : $breakpoint-mobile){
+      margin-bottom: 30px;
+    }
+  }
+  .notify-set-right {
+    flex-basis: 55%;
+    padding-left: 70px;
+    @media(max-width : $breakpoint-mobile){
+      padding-left: 0;
+    }
+  }
+  .notify-set-left h3 {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .notify-set-right .nsetting-block {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .nsetting-title {
+      flex-basis: 80%;
+      color: #111111;
+      font-size: 14px;
+      font-weight: 400;
+    }
+    .notify-toggle {
+      input {
+        opacity: 0;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 0;
+        height: 100%;
+        cursor: pointer;
+      }
+      position: relative;
+      margin: 6px 0px 0px;
+      span {
+        position: relative;
+        width: 47px;
+        height: 12px;
+        background: #DDDDDD;
+        display: inline-block;
+        border-radius: 6px;
+        &:before {
+          content: "";
+          width: 24px;
+          height: 24px;
+          background: #fff;
+          position: absolute;
+          top: -6px;
+          border-radius: 50%;
+          box-shadow: 0px 0px 15.68px 0.32px rgba(0, 0, 0, 0.2);
+          transition: 0.3s  left;
+        }
+      }
+      input:checked + span {
+        &:before {
+          right: 0;
+          background: #11C473;
+        }
+        background: #E7EEF0;
+      }
+    }
+  }
+}
+.payment-main {
+  .block-title h3 {
+    font-size: 14px;
+    color: #111111;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+  .form-group {
+    label {
+      color: #999999;
+      font-size: 13px;
+      display: block;
+    }
+    .custom-form-control {
+      width: 100%;
+      border: 1px solid #CCCCCC;
+      height: 40px;
+      border-radius: 4px;
+      padding: 0 10px;
+      font-size: 14px;
+      color: #000;
+      outline: none;
+    }
+  }
+  .pay-card-info {
+    padding: 20px 25px 10px 25px;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 25px;
+    border-radius: 6px;
+    background: #eeeeee;
+    background: -moz-linear-gradient(top, #eeeeee 0%, #ffffff 100%);
+    background: -webkit-linear-gradient(top, #eeeeee 0%, #ffffff 100%);
+    background: linear-gradient(to bottom, #eeeeee 0%, #ffffff 100%);
+  }
+  .pay-billing-address {
+    margin-bottom: 25px;
+  }
+  .pay-card-info .visa-card-info {
+    position: relative;
+    span {
+      position: absolute;
+      right: 10px;
+      top: 7px;
+      svg {
+        width: 37px;
+      }
+    }
+    input {
+      padding-right: 60px;
+    }
+  }
+  .pay-method {
+    margin-bottom: 20px;
+  }
+  .pay-add-account {
+    border: 1px solid #DDDDDD;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 20px 25px 10px 25px;
+  }
+  .pay-submit .btn-save {
+    @extend %update-btn-bg;
+    color: $white;
+    border: 0;
+    text-transform: uppercase;
+   }
 }
