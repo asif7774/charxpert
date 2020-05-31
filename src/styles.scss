@@ -51,6 +51,22 @@ a,button{
   color: #f00;
   font-size: 11px;
 }
+.btn-gradient{
+	@extend %update-btn-bg;
+  color: $white;
+  border: 0;
+  outline: none;
+}
+.custom-form-control {
+  width: 100%;
+  border: 1px solid #CCCCCC;
+  height: 40px;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 14px;
+  color: #000;
+  outline: none;
+}
 .content{
   padding: 30px 30px 0 30px;
   @media(max-width : $breakpoint-mobile){
@@ -779,16 +795,6 @@ a,button{
       display: block;
       margin-bottom: 3px;
     }
-    .custom-form-control {
-      width: 100%;
-      border: 1px solid #CCCCCC;
-      height: 40px;
-      border-radius: 4px;
-      padding: 0 10px;
-      font-size: 14px;
-      color: #000;
-      outline: none;
-    }
     .psw-group {
       position: relative;
       span {
@@ -932,17 +938,7 @@ a,button{
       color: #999999;
       font-size: 13px;
       display: block;
-    }
-    .custom-form-control {
-      width: 100%;
-      border: 1px solid #CCCCCC;
-      height: 40px;
-      border-radius: 4px;
-      padding: 0 10px;
-      font-size: 14px;
-      color: #000;
-      outline: none;
-    }
+    }    
   }
   .pay-card-info {
     padding: 20px 25px 10px 25px;
@@ -986,4 +982,84 @@ a,button{
     border: 0;
     text-transform: uppercase;
    }
+}
+.transition-filter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  @media(max-width : $breakpoint-mobile){
+	  display: block;
+  }
+  .filter-left {
+    display: flex;
+    align-items: flex-end;
+    @media(max-width : $breakpoint-mobile){
+      display: block;
+    }
+    .inp-filter {
+      padding-right: 15px;
+      @media(max-width : $breakpoint-mobile){
+        padding-right: 0;
+        margin-bottom: 15px;;
+      }
+    }
+    .inp-filter-btn .btn-go {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      padding: 10px;
+      box-shadow: 0px 0px 15.68px 0.32px rgba(0, 113, 178, 0.4);
+      @media(max-width : $breakpoint-mobile){
+        margin-bottom: 15px;;
+      }
+    }
+  }
+  .filter-right { 
+    display: flex;
+    .filter-icon {
+      svg {
+        width: 20px;
+        fill: #0071B2;
+      }
+      .anchor-tag {
+        padding: 11px 20px;
+        background: #fff;
+        box-shadow: 0px 0px 15.68px 0.32px rgba(240, 3, 50, 0.1);
+        display: inline-block;
+        border-radius: 4px;
+      }
+    }
+    .download-csv{
+      margin-left: 15px;
+      .btn-download{
+        background: #10C573;
+        border: 0;
+        outline: none;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-radius: 2px;
+        padding: 10px 22px;
+      }
+    }
+  }
+}
+.transition-data table {
+  th {
+    border: 0;
+    color: #999999;
+    font-weight: 600;
+  }
+  tbody tr:nth-child(2n+1) {
+    background: #F4F8F9;
+  }
+  font-size: 13px;
+  td, th {
+    padding: 15px 10px;
+  }
 }
