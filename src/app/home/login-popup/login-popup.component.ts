@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/_services/Authentication.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { CommonService } from 'src/app/_services/Common/Common.service';
 
 @Component({
   selector: 'app-login-popup',
@@ -10,21 +11,25 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class LoginPopupComponent implements OnInit {
 userName: string;
 password: string;
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService,  private common: CommonService) { }
 
   ngOnInit(): void {
   }
 
   SignInUser() {
-    this.authService.SignInUser(this.userName,this.password).subscribe((data) => {
+    this.authService.SignInUser(this.userName, this.password).subscribe((data) => {
       if (data) {
-        alert('User Registered successfully. please check email for verification.');
+        this.common.show_toast('s', 'User LoggedIn successfully.');
         console.log(data);
       }
     },
     (err: HttpErrorResponse) => {
-      alert('Something went wrong. please check console log for more detail.');
+      this.common.show_toast('e', 'There wass some error, Please try again.');
       console.log(err);
     });
+  }
+
+  OnSignUpClick() {
+
   }
 }

@@ -1,10 +1,21 @@
 <div class="modal-form">
-    <form action="">
+    <form action="" #signinform="ngForm">
         <div class="form-group">
-           <input type="text" placeholder="E-mail" class="custom-input">
+           <input type="text" name="E-mail" id="E-mail" placeholder="E-mail" class="custom-input" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required [(ngModel)]="userName" #email="ngModel">
+           <div *ngIf="email.invalid && (email.dirty || email.touched || signinform.submitted)"
+                class="text-error text-left">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.hasError('pattern')">This value should be a valid email.</div>
+            </div>
         </div>
         <div class="form-group">
-            <input type="text" placeholder="Password" class="custom-input">
+            <input type="text" placeholder="Password" name="Password" id="Password" class="custom-input" pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]*" required
+            [(ngModel)]="password" #passwordValue="ngModel">
+            <div *ngIf="passwordValue.invalid && (passwordValue.dirty || passwordValue.touched || signinform.submitted)"
+                class="text-error text-left">
+                <div *ngIf="passwordValue.errors.required">Password is required</div>
+                <div *ngIf="passwordValue.hasError('pattern')">Please enter valid Password.</div>
+            </div>
         </div>
         <div class="login-check-link form-group">
             <div class="login-check">
@@ -17,7 +28,7 @@
             </div>
         </div>
         <div class="form-group">
-            <button class="btn btn-block btn-green">Sign In</button>
+            <button class="btn btn-block btn-green" [disabled]="!signinform.form.valid" (click)="SignInUser()">Sign In</button>
         </div>
         <div class="form-group">
             <div class="login-option">Or</div>
@@ -32,7 +43,7 @@
             </div>
         </div>
         <div class="if-no-account">
-            Don’t have an account? <span class="anchor-tag" >Signup Now</span>
+            Don’t have an account? <span class="anchor-tag" (click) = "OnSignUpClick()">Signup Now</span>
         </div>
     </form>
 </div>

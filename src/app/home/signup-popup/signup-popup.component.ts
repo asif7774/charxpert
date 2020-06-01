@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { AuthenticationService } from 'src/app/_services/Authentication.service';
 import { SignUpUserModel } from 'src/app/_models/SignUpUserModel';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -10,6 +10,8 @@ import { CommonService } from 'src/app/_services/Common/Common.service';
   styleUrls: ['./signup-popup.component.scss'],
 })
 export class SignupPopupComponent implements OnInit {
+  @Input() public signupShow;
+  @Output() public signupShowReturn = new EventEmitter();
   signupUserDetails: SignUpUserModel = new SignUpUserModel();
   constructor(private authService: AuthenticationService, private common: CommonService) {}
 
@@ -22,18 +24,22 @@ export class SignupPopupComponent implements OnInit {
   signUpUser() {
     this.authService.SignUpUser(this.signupUserDetails).subscribe((data) => {
       if (data) {
-        alert('User Registered successfully. please check email for verification.');
+        // alert('User Registered successfully. please check email for verification.');
+        this.common.show_toast('s', 'User Registered successfully. please check email for verification.');
         console.log(data);
-        this.common.change_routing('');
+        this.signupShowReturn.emit('false');
+        setTimeout(() => {
+          this.common.change_routing('verify-email');
+        }, 2000);
       }
     },
     (err: HttpErrorResponse) => {
-      alert('Something went wrong. please check console log for more detail.');
+      this.common.show_toast('e', 'There wass some error, Please try again.');
       console.log(err);
     });
   }
 
   OnSignInClick() {
-    this.common.change_routing('');
+
   }
 }

@@ -30,9 +30,9 @@ export class AuthenticationService {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
-        'Authorization': 'Basic ' + btoa('username:password')
+        'Authorization': 'Basic ' + btoa(username + ':' + password)
       })
     };
-    return this.httpClient.get(this.baseUrl + '/api/signup/', httpOptions);
+    return this.httpClient.get(this.baseUrl + '/api/login/', httpOptions);
   }
 }

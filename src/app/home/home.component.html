@@ -30,7 +30,7 @@
                     <app-login-popup></app-login-popup>
                 </div>
                 <div class="modal-form" *ngIf="signupShow">
-                    <app-signup-popup></app-signup-popup>
+                    <app-signup-popup (getSingupFlag)="get_child_value($event)"></app-signup-popup>
                 </div>
             </div>
     
