@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReloginComponent } from './relogin/relogin.component';
-import { ScheduleComponent } from './schedule/schedule.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  { path: 'schedule', component: ScheduleComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'relogin', component: ReloginComponent },
 ];
 

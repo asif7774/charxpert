@@ -521,6 +521,9 @@ a,button{
           &:hover{
             @extend %sidebar-bg;
             color: $white;
+            svg{
+              fill: #fff;
+            }
           }
           h5{
             margin-bottom:0;
@@ -530,10 +533,17 @@ a,button{
             text-transform: uppercase;
             letter-spacing: 1px;
           }
+          svg{
+            fill: #999;
+            width: 18px;
+          }
         }
         .active{
           @extend %sidebar-bg;
           color: $white;
+          svg{
+            fill: #fff;
+          }
         }
       }
     }

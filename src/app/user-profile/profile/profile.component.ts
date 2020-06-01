@@ -3,11 +3,11 @@ import { CalendarEvent, CalendarView } from 'angular-calendar';
 import { setHours, setMinutes } from 'date-fns';
 
 @Component({
-  selector: 'app-schedule',
-  templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.scss']
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
-export class ScheduleComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   
   view: CalendarView = CalendarView.Day;
 
