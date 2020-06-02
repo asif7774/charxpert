@@ -10,11 +10,9 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 import { TagInputModule } from 'ngx-chips';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { InboxComponent } from './inbox/inbox.component';
-import { ExpertsComponent } from './experts/experts.component';
 
 @NgModule({
-  declarations: [ReloginComponent, ProfileComponent, InboxComponent, ExpertsComponent],
+  declarations: [ReloginComponent, ProfileComponent],
   imports: [
     CommonModule,
     UserProfileRoutingModule,
