@@ -1,12 +1,12 @@
     <div class="sidebar-main">
         <ul>
-            <li class="anchor-tag">
+            <li class="anchor-tag" [routerLink]="['/dashboard/user-dashboard']" routerLinkActive="active">
                 <svg class="icon" viewBox="0 0 900 900" >
                     <use xlink:href="#home"></use>
                   </svg>
                 <h5>Dashboard</h5>
             </li>
-            <li class="anchor-tag" [routerLink]="['/user-profile/inbox']" routerLinkActive="active">
+            <li class="anchor-tag" [routerLink]="['/inbox/user-inbox']" routerLinkActive="active">
                 <svg class="icon" viewBox="0 0 900 900">
                     <use xlink:href="#inbox"></use>
                   </svg>
@@ -18,7 +18,7 @@
                   </svg>
                 <h5>Calls</h5>
             </li>
-            <li class="anchor-tag" [routerLink]="['/user-profile/experts']" routerLinkActive="active">
+            <li class="anchor-tag" [routerLink]="['/experts/expert-user']" routerLinkActive="active">
                 <svg class="icon" viewBox="0 0 900 900" >
                     <use xlink:href="#expert"></use>
                   </svg>
