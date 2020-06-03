@@ -1337,10 +1337,11 @@ a,button{
       position: absolute;
       left: 10px;
       top: 10px;
+      svg {
+        width: 16px;
+        fill: #888;
+      }
     }
-  }
-  &.inbox-search .search-icon svg {
-    width: 16px;
   }
   .inbox-menu ul li {
     font-size: 14px;
