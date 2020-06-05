@@ -606,16 +606,28 @@ a,button{
     width: 180px;
     background: $white;
     box-shadow: 0px 0px 11.76px 0.24px rgba(0, 0, 0, 0.1);
+    @media(max-width : $breakpoint-mobile){
+      width: 100%;
+      margin-bottom: 15px;
+    }
     .sidebar-main{
       ul{
         list-style:none;
         margin:0;
         padding:0;
+        @media(max-width : $breakpoint-mobile){
+          display: flex;
+          overflow-y: auto;
+        }
         li{
           text-align: center;
           padding: 34px 10px;
           border-bottom: 1px solid #ECF5F7;
           color: #999;
+          @media(max-width : $breakpoint-mobile){
+            padding: 15px 20px;
+            white-space: nowrap;
+          }
           &:last-child{
             border-bottom: 0;
           }
@@ -633,10 +645,19 @@ a,button{
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
+            @media(max-width : $breakpoint-mobile){
+              display: inline-block;
+              margin-top: 0;
+              margin-left: 10px;
+            }
           }
           svg{
             fill: #999;
             width: 18px;
+            @media(max-width : $breakpoint-mobile){	
+              position: relative;
+              top: -2px;          
+            }
           }
         }
         .active{
@@ -1320,10 +1341,17 @@ a,button{
   display: flex;
   align-items: center;
   padding-bottom: 10px;
+  @media(max-width : $breakpoint-mobile){
+    display: block;
+  }
   .inbox-search {
     max-width: 320px;
     position: relative;
     margin-right: 20px;
+    @media(max-width : $breakpoint-mobile){
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
     input {
       width: 100%;
       border-radius: 4px;
@@ -1347,16 +1375,33 @@ a,button{
     font-size: 14px;
     color: #fff;
     padding: 0 20px !important;
+    text-transform: uppercase;
+    @media(max-width : $breakpoint-mobile){
+      padding: 0 10px !important;
+    }
     &.active {
       font-weight: 800;
     }
   }
 }
 .inbox-body {
+  .inbox-detail-scroller {
+    overflow-y: auto;
+    max-height: 700px;
+  }
   .inbox-list {
     position: relative;
     width: 380px;
-    background: #F4F8F9;   
+    background: #F4F8F9; 
+    max-height: 700px;
+    overflow-y: auto;  
+    @media(max-width : $breakpoint-tablet){
+      width: 300px;
+    }
+    @media(max-width : $breakpoint-mobile){
+      width: 100%;
+    }
+    
     ul {
       list-style: none;
       padding: 0;
@@ -1417,10 +1462,229 @@ a,button{
     }
   }
   display: flex;
+  @media(max-width : $breakpoint-mobile){
+    display: block;
+  }
   .inbox-detail {
     .usr-inbox-detail {
       padding: 30px 45px;
+      border-bottom: 1px solid #DDE6E8;
+      @media(max-width : $breakpoint-mobile){
+        padding: 20px 15px;
+      }
+      @media(max-width : $breakpoint-tablet){
+        padding: 20px 15px;
+      }
     }
     flex-basis: calc(100% - 380px);
+    @media(max-width : $breakpoint-tablet){
+      flex-basis: calc(100% - 300px);
+    }
+  }
+}
+.usr-inbox-detail .usr-inbox-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  @media(max-width : $breakpoint-mobile){
+    display: block;
+  }
+  h3 {
+    font-size: 22px;
+    font-weight: 600;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+      padding-left: 20px;
+      @media(max-width : $breakpoint-mobile){
+        padding-left: 0;
+        padding-right: 15px;
+      }
+      .anchor-tag {
+        width: 32px;
+        height: 32px;
+        background: #F4F8F9;
+        display: inline-block;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 28px;
+        svg {
+          fill: #000;
+        }
+      }
+    }
+  }
+}
+.inbox-detail-usr {
+  display: flex;
+  justify-content: space-between;
+  .inb-usr-block {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
+    .inb-usr-img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 12px;
+      img {
+        width: 100%;
+        height: auto;
+        min-height: 36px;
+      }
+    }
+    .inb-usr-info {
+      h3 {
+        font-size: 13px;
+        font-weight: 500;
+        margin: 0;
+        color: #111111;
+      }
+      p {
+        color: #6A8A92;
+        margin: 0;
+        font-size: 10px;
+      }
+    }
+  }
+  .inb-usr-action {
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    background: #F4F8F9;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+  }
+  .inb-usr-action svg {
+    fill: #000;
+  }
+}
+.inb-content-detail {
+  font-size: 13px;
+  color: #666666;
+  margin-bottom: 24px;
+  line-height: 26px;
+
+  p {
+    margin-bottom: 10px;
+  }
+}
+.inbox-body .inbox-detail {
+  .usr-inbox-detail .inb-attachments ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 -10px;
+    li {
+      display: inline-block;
+      margin: 10px;
+      .attachment-view {
+        span {
+          &.attachmnent-icon {
+            background: #F4F8F9;
+            display: inline-block;
+            padding: 13px 10px;
+            margin-right: 14px;
+            svg {
+              fill: #6A8A92;
+              width: 16px;
+            }
+          }
+          &.attachment-download-icon {
+            svg {
+              fill: #006CAA;
+              width: 21px;
+            }
+            margin-left: 14px;
+          }
+        }
+        font-size: 12px;
+        color: #111111;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+          color: #10c87c;
+        }
+      }
+    }
+  }
+  .usr-inbox-trail {
+    padding: 20px 45px;
+    border-bottom: 1px solid #DDE6E8;
+    @media(max-width : $breakpoint-mobile){
+      padding: 20px 15px;
+    }
+    @media(max-width : $breakpoint-tablet){
+      padding: 20px 15px;
+    }
+    .inb-content-detail {
+      margin-bottom: 0;
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .usr-inbox-ftr {
+    padding: 10px;
+    background: #F4F8F9;
+    border: 1px solid #DDE6E8;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    .add-attachment svg {
+      fill: #111111;
+      width: 21px;
+    }
+    .messege-send-btn button {
+      background: #10C573;
+      color: #fff;
+      border: 0;
+      outline: none;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 32px;
+      line-height: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-radius: 2px;
+    }
+    .messege-box {
+      flex-basis: 100%;
+      margin: 0 20px;
+      position: relative;
+      input {
+        width: 100%;
+        padding: 0 35px 0 10px;
+        height: 40px;
+        border: 0;
+        border-radius: 2px;
+        color: #222;
+        outline: none;
+        font-size: 13px;
+      }
+      span {
+        position: absolute;
+        cursor: pointer;
+        top: 9px;
+        right: 6px;
+        svg {
+          fill: #666666;
+          width: 21px;
+          transition: 0.3s;
+        }
+        &:hover svg {
+          fill: #10c573;
+        }
+      }
+    }
+    .add-attachment {
+      line-height: 40px;
+    }
   }
 }
