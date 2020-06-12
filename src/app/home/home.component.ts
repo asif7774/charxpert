@@ -78,7 +78,7 @@ export class HomeComponent implements OnInit {
       if (data) {
         setTimeout(() => {
           this.common.show_toast('s', 'User LoggedIn successfully.');
-        }, 5);
+        }, 2);
 
         console.log(data);
         localStorage.setItem('UserDetails', JSON.stringify(userDetails));

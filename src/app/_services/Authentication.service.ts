@@ -38,11 +38,21 @@ export class AuthenticationService {
     return this.httpClient.get(this.baseUrl + '/api/login/', httpOptions);
   }
 
+  /**
+   * Get OTP for validating phone number.
+   */
   public GetOTP() {
     const request = {
       valid_from: '',
       valid_to: ''
     };
     return this.httpClient.post(this.baseUrl + '/api/twilio_token/', request);
+  }
+
+  /**
+   * Logged out a user.
+   */
+  public Logout() {
+    return this.httpClient.get(this.baseUrl + '/api/logout/');
   }
 }

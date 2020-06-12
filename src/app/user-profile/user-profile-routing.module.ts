@@ -4,6 +4,7 @@ import { ReloginComponent } from './relogin/relogin.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'profile', pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent },
   { path: 'relogin', component: ReloginComponent }
 ];
