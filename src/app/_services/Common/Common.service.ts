@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ show_toast(type, msg, timeout? ){
   }
   const ToastConfig = {
     closeButton: true,
-    positionClass: 'toast-bottom-right',
+    positionClass: 'toast-top-right',
     timeOut : timeout,
     preventDuplicates: true,
   };
@@ -36,4 +37,8 @@ show_toast(type, msg, timeout? ){
   }
 }
 
+//  CreateAuthHeader(header: HttpHeaders, username: string, password: string) {
+//   header.append('Authorization', 'Basic ' +
+//   btoa(username + ':' + password));
+//  }
 }

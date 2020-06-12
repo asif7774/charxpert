@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" placeholder="Password" name="Password" id="Password" class="custom-input" pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]*" required
+                                <input type="password" placeholder="Password" name="Password" id="Password" class="custom-input" pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]*" required
                                 [(ngModel)]="password" #passwordValue="ngModel">
                                 <div *ngIf="passwordValue.invalid && (passwordValue.dirty || passwordValue.touched || signinform.submitted)"
                                     class="text-error text-left">
@@ -73,7 +73,7 @@
                                 </div>
                             </div>
                             <div class="if-no-account">
-                                Don’t have an account? <span class="anchor-tag" (click)="signupModal(openLogin)">Signup Now</span>
+                                Don’t have an account? <span class="anchor-tag" (click)="signupViewToggle(true)">Signup Now</span>
                             </div>
                         </form>
                     </div>
@@ -149,7 +149,7 @@
                                     Up</button>
                             </div>
                             <div class="if-no-account">
-                                Already have an account? <span class="anchor-tag" (click)="loginModal(openLogin)">Signin Now</span>
+                                Already have an account? <span class="anchor-tag" (click)="loginViewToggle(true)">Signin Now</span>
                             </div>
                         </form>
                     </div>

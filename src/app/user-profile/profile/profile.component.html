@@ -62,21 +62,21 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="">Full Name</label>
-                                        <input type="text" class="custom-form-control" placeholder="Full Name" />
+                                        <input type="text" class="custom-form-control" name="FullName" id="FullName" placeholder="Full Name" [(ngModel)]="userDetailsModel.fullName" #fullNameValue="ngModel"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="">User Name/Display Name</label>
-                                        <input type="text" class="custom-form-control"
-                                            placeholder="User Name/Display Name" />
+                                        <input type="text" class="custom-form-control" name="UserName" id="UserName"
+                                            placeholder="User Name/Display Name" [(ngModel)]="userDetailsModel.fullName" #fullNameValue="ngModel"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="">Password</label>
                                         <div class="psw-group">
-                                            <input type="password" class="custom-form-control" placeholder="Password" />
+                                            <input type="password" class="custom-form-control" name="Password" id="Password" placeholder="Password" [(ngModel)]="userDetailsModel.password" #passwordValue="ngModel"/>
                                             <span>Show password</span>
                                         </div>
                                     </div>
@@ -84,13 +84,13 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="">Email</label>
-                                        <input type="text" class="custom-form-control" placeholder="Email" />
+                                        <input type="text" class="custom-form-control" name="Email" id="Email" placeholder="Email" [(ngModel)]="userDetailsModel.email" #emailValue="ngModel"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label for="">Hourly Rate ($)</label>
-                                        <input type="text" class="custom-form-control" placeholder="Hourly Rate ($)" />
+                                        <input type="text" class="custom-form-control" name="HourlyRate" id="HourlyRate" placeholder="Hourly Rate ($)" [(ngModel)]="userDetailsModel.hourlyRate" #hourlyRideValue="ngModel"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
@@ -98,14 +98,14 @@
                                         <div class="col-sm-5">
                                             <div class="form-group">
                                                 <label for="">Country</label>
-                                                <input type="text" class="custom-form-control" placeholder="Country" />
+                                                <input type="text" class="custom-form-control" name="Country" id="Country" placeholder="Country" [(ngModel)]="userDetailsModel.country" #countryValue="ngModel"/>
                                             </div>
                                         </div>
                                         <div class="col-sm-7">
                                             <div class="form-group">
                                                 <label for="">Phone Number</label>
-                                                <input type="text" class="custom-form-control"
-                                                    placeholder="Phone Number" />
+                                                <input type="text" class="custom-form-control" name="PhoneNumber" id="PhoneNumber"
+                                                    placeholder="Phone Number" [(ngModel)]="userDetailsModel.phoneNumber" #phoneNumberValue="ngModel"/>
                                             </div>
                                         </div>
                                     </div>
@@ -129,8 +129,8 @@
                                 <div class="col-sm-12">
                                     <div class="form-group">
                                         <label for="">Your official email ID</label>
-                                        <input type="text" class="custom-form-control"
-                                            placeholder="Your official email ID" />
+                                        <input type="text" class="custom-form-control" name="OfficialEmail" id="OfficialEmail"
+                                            placeholder="Your official email ID" [(ngModel)]="userDetailsModel.officialEmail" #fullNameValue="ngModel"/>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">

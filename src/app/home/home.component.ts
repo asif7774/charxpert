@@ -26,13 +26,21 @@ export class HomeComponent implements OnInit {
   loginModal(content) {
     this.modalService.open(content, { centered: true, windowClass: 'login-modal', size: 'lg' });
     this.loginShow = true;
-    this.signupShow = false;
   }
 
   signupModal(content) {
     this.modalService.open(content, { centered: true, windowClass: 'login-modal', size: 'lg' });
-    this.loginShow = false;
     this.signupShow = true;
+  }
+
+  loginViewToggle(viewType){
+    this.loginShow=viewType;
+    this.signupShow = false;
+  }
+
+  signupViewToggle(viewType){
+    this.signupShow=viewType;
+    this.loginShow = false;
   }
 
   ngOnInit(): void {
@@ -52,23 +60,30 @@ export class HomeComponent implements OnInit {
         // alert('User Registered successfully. please check email for verification.');
         this.common.show_toast('s', 'User Registered successfully. please check email for verification.');
         console.log(data);
-        //this.signupShowReturn.emit('false');
-        setTimeout(() => {
-          this.common.change_routing('verify-email');
-        }, 2000);
+        this.modalService.dismissAll()
+        this.common.change_routing('verify-email');
       }
     },
     (err: HttpErrorResponse) => {
       this.common.show_toast('e', 'There wass some error, Please try again.');
-      console.log(err);
     });
   }
 
   SignInUser() {
+    const userDetails = {
+      userName : this.userName,
+      password : this.password
+    }
     this.authService.SignInUser(this.userName, this.password).subscribe((data) => {
       if (data) {
-        this.common.show_toast('s', 'User LoggedIn successfully.');
+        setTimeout(() => {
+          this.common.show_toast('s', 'User LoggedIn successfully.');
+        }, 2);
+
         console.log(data);
+        localStorage.setItem('UserDetails', JSON.stringify(userDetails));
+        this.modalService.dismissAll()
+        this.common.change_routing('user-profile');
       }
     },
     (err: HttpErrorResponse) => {
