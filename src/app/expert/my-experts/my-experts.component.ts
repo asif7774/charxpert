@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-experts.component.scss']
 })
 export class MyExpertsComponent implements OnInit {
-
+  currentRate = 4;
   constructor() { }
 
   ngOnInit(): void {
