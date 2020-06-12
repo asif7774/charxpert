@@ -9,6 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './core/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform
     AppRoutingModule,
     CustomLayoutModule,
     FlexLayoutModule,
+    SharedModule,
     NgbModule,
     HttpClientModule,
     ToastrModule.forRoot(),
