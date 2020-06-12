@@ -23,7 +23,7 @@
         </div>
         <div class="modal-right-panel">
             <div class="modal-right-panel-content">
-                <div class="modal-logo">
+                <div class="modal-logo" *ngIf="loginShow">
                     <img src="assets/images/home/login-logo.png" alt="chatXpert">
                 </div>
                 <div class="modal-form" *ngIf="loginShow">
@@ -81,10 +81,28 @@
                 </div>
                 <div class="modal-form" *ngIf="signupShow">
                     <!-- signup modal -->
-                    <div class="modal-form">
+                    <div class="modal-form signup-form">
                         <form action="" #signupform="ngForm">
                             <div class="form-group">
-                                <input type="text" name="FirstName" id="FirstName" placeholder="First Name" class="custom-input"
+                                <h4>I am</h4>
+                                <div class="theme-radio-inline">
+                                    <div class="radio-inline">                                        
+                                        <input type="radio" id="ifClient" name="iam">
+                                        <label for="ifClient">A Client</label>
+                                    </div>
+                                    <div class="radio-inline">                                        
+                                        <input type="radio" id="ifExpert" name="iam">
+                                        <label for="ifExpert">An Expert</label>
+                                    </div>
+                                    <div class="radio-inline">                                        
+                                        <input type="radio" id="ifBoth" name="iam">
+                                        <label for="ifBoth">Both</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <h5>Looking for Expert Advice</h5>
+                            <div class="form-group">
+                                <input type="text" name="FirstName" id="FirstName" placeholder="Full Name" class="custom-input"
                                     pattern="[a-zA-Z ]*" required [(ngModel)]="signupUserDetails.FirstName" #firstname="ngModel">
                                 <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched || signupform.submitted)"
                                     class="text-error text-left">
@@ -93,7 +111,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="LastName" id="LastName" placeholder="Last Name" class="custom-input"
+                                <input type="text" name="LastName" id="LastName" placeholder="User Name" class="custom-input"
                                     pattern="[a-zA-Z ]*" required [(ngModel)]="signupUserDetails.LastName" #lastname="ngModel">
                                 <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched || signupform.submitted)"
                                     class="text-error text-left">
@@ -120,6 +138,9 @@
                                     <div *ngIf="password.errors.required">Password is required</div>
                                     <div *ngIf="password.hasError('pattern')">Please enter valid Password.</div>
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" placeholder="Linkedin Profile URL" name="Password" id="Password" class="custom-input">
                             </div>
                             <div class="row">
                                 <div class="col-sm-5">
