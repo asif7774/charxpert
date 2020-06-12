@@ -58,6 +58,7 @@ export class HomeComponent implements OnInit {
     this.authService.SignUpUser(this.signupUserDetails).subscribe((data) => {
       if (data) {
         // alert('User Registered successfully. please check email for verification.');
+        localStorage.setItem('UserDetails', JSON.stringify(this.signupUserDetails));
         this.common.show_toast('s', 'User Registered successfully. please check email for verification.');
         console.log(data);
         this.modalService.dismissAll()
@@ -70,19 +71,13 @@ export class HomeComponent implements OnInit {
   }
 
   SignInUser() {
-    const userDetails = {
-      userName : this.userName,
-      password : this.password
-    }
     this.authService.SignInUser(this.userName, this.password).subscribe((data) => {
       if (data) {
         setTimeout(() => {
-          this.common.show_toast('s', 'User LoggedIn successfully.');
+          this.common.show_toast('s', 'Welcome. ' + this.userName);
         }, 2);
-
         console.log(data);
-        localStorage.setItem('UserDetails', JSON.stringify(userDetails));
-        this.modalService.dismissAll()
+        this.modalService.dismissAll();
         this.common.change_routing('user-profile');
       }
     },
