@@ -15,7 +15,7 @@ export class LoginSignupModalComponent implements OnInit {
 
   private eventsSubscription: Subscription;
   @Input() events: Observable<void>;
-  @ViewChild('openLogin') openLoginRef: ElementRef;
+  @ViewChild('openLogin') modalRef: ElementRef;
   userName: string;
   password: string;
   modalViewType:string;
@@ -82,10 +82,8 @@ export class LoginSignupModalComponent implements OnInit {
   }
 
 
-  modalOpenLogic(modalType){
-    console.log(modalType);
-    console.log(this.openLoginRef);
-    this.modalService.open(this.openLoginRef, { centered: true, windowClass: 'login-modal', size: 'lg' });
+  modalOpenLogic(modalType:any){
+    this.modalService.open(this.modalRef, { centered: true, windowClass: 'login-modal', size: 'lg' });
     this.modalViewType = modalType;
   }
 
