@@ -52,10 +52,7 @@ export class HomeComponent implements OnInit {
         // alert('User Registered successfully. please check email for verification.');
         this.common.show_toast('s', 'User Registered successfully. please check email for verification.');
         console.log(data);
-        //this.signupShowReturn.emit('false');
-        setTimeout(() => {
-          this.common.change_routing('verify-email');
-        }, 2000);
+        this.common.change_routing('verify-email');
       }
     },
     (err: HttpErrorResponse) => {
@@ -65,10 +62,19 @@ export class HomeComponent implements OnInit {
   }
 
   SignInUser() {
+    const userDetails = {
+      userName : this.userName,
+      password : this.password
+    }
     this.authService.SignInUser(this.userName, this.password).subscribe((data) => {
       if (data) {
-        this.common.show_toast('s', 'User LoggedIn successfully.');
+        setTimeout(() => {
+          this.common.show_toast('s', 'User LoggedIn successfully.');
+        }, 5);
+
         console.log(data);
+        localStorage.setItem('UserDetails', JSON.stringify(userDetails));
+        this.common.change_routing('user-profile');
       }
     },
     (err: HttpErrorResponse) => {

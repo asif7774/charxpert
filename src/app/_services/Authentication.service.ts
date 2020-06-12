@@ -26,13 +26,23 @@ export class AuthenticationService {
     return this.httpClient.post(this.baseUrl + '/api/signup/', signupData);
   }
 
+  /**
+   * Sign up User
+   * @param username
+   * @param password
+   */
   public SignInUser(username: string, password: string) {
     const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        'Authorization': 'Basic ' + btoa(username + ':' + password)
-      })
-    };
+    headers: new HttpHeaders().set('Authorization', 'Basic ' + btoa(username + ':' + password))
+  };
     return this.httpClient.get(this.baseUrl + '/api/login/', httpOptions);
+  }
+
+  public GetOTP() {
+    const request = {
+      valid_from: '',
+      valid_to: ''
+    };
+    return this.httpClient.post(this.baseUrl + '/api/twilio_token/', request);
   }
 }
