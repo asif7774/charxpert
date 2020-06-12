@@ -26,13 +26,21 @@ export class HomeComponent implements OnInit {
   loginModal(content) {
     this.modalService.open(content, { centered: true, windowClass: 'login-modal', size: 'lg' });
     this.loginShow = true;
-    this.signupShow = false;
   }
 
   signupModal(content) {
     this.modalService.open(content, { centered: true, windowClass: 'login-modal', size: 'lg' });
-    this.loginShow = false;
     this.signupShow = true;
+  }
+
+  loginViewToggle(viewType){
+    this.loginShow=viewType;
+    this.signupShow = false;
+  }
+
+  signupViewToggle(viewType){
+    this.signupShow=viewType;
+    this.loginShow = false;
   }
 
   ngOnInit(): void {
@@ -60,7 +68,6 @@ export class HomeComponent implements OnInit {
     },
     (err: HttpErrorResponse) => {
       this.common.show_toast('e', 'There wass some error, Please try again.');
-      console.log(err);
     });
   }
 
