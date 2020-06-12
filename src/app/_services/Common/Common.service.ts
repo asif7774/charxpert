@@ -20,7 +20,7 @@ show_toast(type, msg, timeout? ){
   }
   const ToastConfig = {
     closeButton: true,
-    positionClass: 'toast-bottom-right',
+    positionClass: 'toast-top-right',
     timeOut : timeout,
     preventDuplicates: true,
   };
