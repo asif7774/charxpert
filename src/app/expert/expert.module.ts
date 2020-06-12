@@ -6,13 +6,14 @@ import { MyExpertsComponent } from './my-experts/my-experts.component';
 import { FindExpertsComponent } from './find-experts/find-experts.component';
 import { TrackQueryComponent } from './track-query/track-query.component';
 import { ExpertProfileComponent } from './expert-profile/expert-profile.component';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [MyExpertsComponent, FindExpertsComponent, TrackQueryComponent, ExpertProfileComponent],
   imports: [
     CommonModule,
-    ExpertRoutingModule
+    ExpertRoutingModule,
+    NgbModule
   ]
 })
 export class ExpertModule { }
