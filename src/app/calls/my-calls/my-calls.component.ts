@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-calls.component.scss']
 })
 export class MyCallsComponent implements OnInit {
+  currentRate = 8;
 
   constructor() { }
 

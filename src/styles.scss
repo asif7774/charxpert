@@ -1688,3 +1688,155 @@ a,button{
     }
   }
 }
+.calls-block ul {
+  padding: 0;
+  list-style: none;
+  margin: 0 -15px;
+  display: flex;
+  flex-wrap: wrap;
+  @media(max-width : $breakpoint-tablet){
+    margin: 0 -7px;
+  }
+  li {
+    padding: 15px;
+    flex-basis: 33.33%;
+    @media(max-width : $breakpoint-tablet){
+      flex-basis: 100%;
+      padding: 7px;
+    }
+    .call-box-main {
+      background: #F4F8F9;
+      border: 1px solid #DDE6E8;
+      padding: 15px;
+      position: relative;
+      .call-waiting{
+        background: #fff;
+        padding: 15px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        p{
+          margin: 0;
+          color: #F00332;
+          font-size: 12px;
+          line-height: 17px;
+          padding-bottom: 10px;
+        }
+        .btn-join{
+          font-size: 11px;
+            font-weight: 600;
+            border: 0;
+            color: $white;
+            padding: 5px 13px;
+            border-radius: 2px;
+            box-shadow: 0px 0px 15.68px 0.32px rgba(0, 113, 178, 0.4);
+        }
+      }
+      .call-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 18px;
+        .call-user-info {
+          .call-user-img {
+            width: 56px;
+            min-width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 12px;
+            img {
+              width: 100%;
+              height: auto;
+              min-height: 56px;
+            }
+          }
+          .call-user-name {
+            h3 {
+              margin: 0;
+              font-size: 13px;
+              font-weight: 600;
+            }
+            p {
+              margin: 0;
+              color: #7F9095;
+              font-size: 10px;
+              padding-bottom: 3px;
+            }
+          }
+          display: flex;
+          align-items: center;
+        }
+        .call-rates{
+          label{
+            font-size: 13px;
+            background: #10C573;
+            color: #fff;
+            border-radius: 3px;
+            margin: 0;
+            padding: 3px 9px;
+            display: inline-block;
+            text-align: center;
+          }
+          span{
+            display: block;
+            font-size: 11px;
+            color: #7F9095;
+          }
+        }
+      }
+      .call-body {
+        p {
+          font-size: 12px;
+          margin: 0;
+          line-height: 17px;
+        }
+        margin-bottom: 32px;
+      }
+      .call-ftr {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @media(max-width : $breakpoint-mobile){
+          display: block;
+        }
+        .call-timing {
+          @media(max-width : $breakpoint-mobile){
+            margin-bottom: 10px;
+          }
+          .call-date {
+            font-size: 13px;
+            margin: 0;
+          }
+          .call-time {
+            font-size: 12px;
+            color: #7F9095;
+            margin: 0;
+          }
+        }
+        .call-action{
+          .btn-schedule{
+            font-size: 11px;
+            font-weight: 600;
+            border: 0;
+            color: $white;
+            padding: 5px 13px;
+            margin-right: 10px;
+            border-radius: 2px;
+            box-shadow: 0px 0px 15.68px 0.32px rgba(0, 113, 178, 0.4);
+          }
+          .btn-cancel{
+            font-size: 11px;
+            font-weight: 600;
+            border: 0;
+            background: #fff;
+            color: #F00332;
+            padding: 5px 13px;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+  }
+}
