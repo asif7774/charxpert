@@ -147,6 +147,9 @@ a,button{
     cursor: pointer;
     transition: $transition-base;
     color: $link-color;
+    &:focus{
+      outline: none;
+    }
 }
 .text-error {
   color: #f00;
