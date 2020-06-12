@@ -12,13 +12,13 @@
                   </svg>
                 <h5>Inbox</h5>
             </li>   
-            <li class="anchor-tag">
+            <li class="anchor-tag" [routerLink]="['/calls/my-calls']" routerLinkActive="active">
                 <svg class="icon" viewBox="0 0 900 900">
                     <use xlink:href="#calls"></use>
                   </svg>
                 <h5>Calls</h5>
             </li>
-            <li class="anchor-tag" [routerLink]="['/experts/expert-user']" routerLinkActive="active">
+            <li class="anchor-tag" [routerLink]="['/experts/my-experts']" routerLinkActive="active">
                 <svg class="icon" viewBox="0 0 900 900" >
                     <use xlink:href="#expert"></use>
                   </svg>

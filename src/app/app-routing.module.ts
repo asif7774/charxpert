@@ -31,6 +31,11 @@ const routes: Routes = [
     path: 'experts',
     loadChildren: () => import('./expert/expert.module').then(m => m.ExpertModule),
     data: { showHeader: true, showSidebar: true, showFooter: false,  compactLayout: false }
+  },
+  {
+    path: 'calls',
+    loadChildren: () => import('./calls/calls.module').then(m => m.CallsModule),
+    data: { showHeader: true, showSidebar: true, showFooter: false,  compactLayout: false }
   }
 ]
 
