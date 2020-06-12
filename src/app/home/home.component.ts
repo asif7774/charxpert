@@ -60,6 +60,7 @@ export class HomeComponent implements OnInit {
         // alert('User Registered successfully. please check email for verification.');
         this.common.show_toast('s', 'User Registered successfully. please check email for verification.');
         console.log(data);
+        this.modalService.dismissAll()
         this.common.change_routing('verify-email');
       }
     },
@@ -81,6 +82,7 @@ export class HomeComponent implements OnInit {
 
         console.log(data);
         localStorage.setItem('UserDetails', JSON.stringify(userDetails));
+        this.modalService.dismissAll()
         this.common.change_routing('user-profile');
       }
     },
