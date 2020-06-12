@@ -26,11 +26,13 @@ export class HomeComponent implements OnInit {
   loginModal(content) {
     this.modalService.open(content, { centered: true, windowClass: 'login-modal', size: 'lg' });
     this.loginShow = true;
+    this.signupShow = false;
   }
 
   signupModal(content) {
     this.modalService.open(content, { centered: true, windowClass: 'login-modal', size: 'lg' });
     this.signupShow = true;
+    this.loginShow = false;
   }
 
   loginViewToggle(viewType){
