@@ -65,11 +65,13 @@ export class LoginSignupModalComponent implements OnInit, OnDestroy {
       password : this.password
     }
     this.authService.SignInUser(this.userName, this.password).subscribe((data) => {
+
       if (data) {
         setTimeout(() => {
           this.common.show_toast('s', 'User LoggedIn successfully.');
         }, 2);
-
+        console.log(data.headers.get('csrftoken'));
+        console.log('test - ', this.common.getCookie('csrftoken'));
         console.log(data);
         localStorage.setItem('LoginDetails', JSON.stringify(userDetails));
         this.modalService.dismissAll();

@@ -33,7 +33,8 @@ export class AuthenticationService {
    */
   public SignInUser(username: string, password: string) {
     const httpOptions = {
-    headers: new HttpHeaders().set('Authorization', 'Basic ' + btoa(username + ':' + password))
+    headers: new HttpHeaders().set('Authorization', 'Basic ' + btoa(username + ':' + password)),
+    observe: 'response' as 'response'
   };
     return this.httpClient.get(this.baseUrl + '/api/login/', httpOptions);
   }

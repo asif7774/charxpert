@@ -37,8 +37,20 @@ show_toast(type, msg, timeout? ){
   }
 }
 
-//  CreateAuthHeader(header: HttpHeaders, username: string, password: string) {
-//   header.append('Authorization', 'Basic ' +
-//   btoa(username + ':' + password));
-//  }
+getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== '') {
+      let cookies: any = document.cookie.split(';');
+      for (let i = 0; i < cookies.length; i++) {
+          let cookie:any = cookies[i].trim();
+          // Does this cookie string begin with the name we want?
+          if (cookie.substring(0, name.length + 1) === (name + '=')) {
+              cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+              break;
+          }
+      }
+  }
+  return cookieValue;
+}
+// var csrftoken = getCookie('csrftoken');
 }
