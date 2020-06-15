@@ -2150,6 +2150,11 @@ textarea.custom-form-control{
   bottom: 0;
   width: 400px;
   z-index: 99;
+  @media(max-width : $breakpoint-mobile){
+    right: 10px;
+    width: 95%;
+    max-width: 400px;
+  }
   .chat-box {
     background: #fff;
     border-radius: 4px;
