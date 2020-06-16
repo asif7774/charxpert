@@ -56,4 +56,8 @@ export class AuthenticationService {
   public Logout() {
     return this.httpClient.get(this.baseUrl + '/api/logout/');
   }
+
+  public GetUserInfo() {
+    return this.httpClient.get(this.baseUrl + '/api/get_user_info');
+  }
 }

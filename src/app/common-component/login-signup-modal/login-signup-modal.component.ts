@@ -70,6 +70,7 @@ export class LoginSignupModalComponent implements OnInit, OnDestroy {
         setTimeout(() => {
           this.common.show_toast('s', 'User LoggedIn successfully.');
         }, 2);
+        this.GetUserInfo();
         console.log(data.headers.get('csrftoken'));
         console.log('test - ', this.common.getCookie('csrftoken'));
         console.log(data);
@@ -95,4 +96,10 @@ export class LoginSignupModalComponent implements OnInit, OnDestroy {
     this.modalViewType = viewType;
   }
 
+  GetUserInfo() {
+    this.authService.GetUserInfo().subscribe(
+      data => {
+        console.log(data);
+      })
+  }
 }
