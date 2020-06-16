@@ -19,6 +19,8 @@ export class LoginSignupModalComponent implements OnInit, OnDestroy {
   userName: string;
   password: string;
   modalViewType: string;
+  showOrgField: boolean = false;
+  showCliField: boolean = false;
 
   signupUserDetails: SignUpUserModel = new SignUpUserModel();
 

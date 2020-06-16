@@ -102,20 +102,30 @@
                                 <div class="style-check">                                      
                                     <input type="checkbox" id="ifExp" name="iam">
                                     <span for="ifExp">An Expert</span>
+                                    <div class="signup-tooltip">
+                                        Can provide expert advice on certain subjects)
+                                    </div>
                                 </div>
                                 <div class="style-check">                                        
-                                    <input type="checkbox" id="ifIndCL" name="iam">
+                                    <input type="checkbox" id="ifIndCL" name="iam" [(ngModel)]="showCliField">
                                     <span for="ifIndCL">An Individual Client</span>
+                                    <div class="signup-tooltip">
+                                        Can provide expert advice on certain subjects)
+                                    </div>
                                 </div>
                                 <div class="style-check">                                        
-                                    <input type="checkbox" id="ifCliOrg" name="iam">
+                                    <input type="checkbox" id="ifCliOrg" name="ifCliOrg" [(ngModel)]="showOrgField">
                                     <span for="ifCliOrg">Client as an Organisation</span>
+                                    <div class="signup-tooltip">
+                                        Can provide expert advice on certain subjects
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
+                            <label for="">Full Name</label>
                             <input type="text" name="FirstName" id="FirstName" placeholder="Full Name" class="custom-form-control"
                                 pattern="[a-zA-Z ]*" required [(ngModel)]="signupUserDetails.FirstName" #firstname="ngModel">
                             <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched || signupform.submitted)"
@@ -127,6 +137,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
+                            <label for="">User Name</label>
                             <input type="text" name="LastName" id="LastName" placeholder="User Name" class="custom-form-control"
                                 pattern="[a-zA-Z ]*" required [(ngModel)]="signupUserDetails.LastName" #lastname="ngModel">
                             <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched || signupform.submitted)"
@@ -138,6 +149,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
+                            <label for="">E-mail</label>
                             <input type="text" placeholder="E-mail" name="E-Mail" id="E-Mail" class="custom-form-control"
                                 pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required [(ngModel)]="signupUserDetails.Email"
                                 #email="ngModel">
@@ -150,6 +162,7 @@
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
+                            <label for="">Password</label>
                             <input type="password" placeholder="Password" name="Password" id="signupPassword" class="custom-form-control"
                                 pattern="^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d][A-Za-z\d!@#$%^&*()_+]*" required
                                 [(ngModel)]="signupUserDetails.Password" #password="ngModel">
@@ -160,15 +173,29 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-6" *ngIf="showCliField">
                         <div class="form-group">
+                            <label for="">Linkedin Profile URL</label>
                             <input type="text" placeholder="Linkedin Profile URL" name="Password" id="Password" class="custom-form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-6" *ngIf="showOrgField">
+                        <div class="form-group">
+                            <label for="">Work Address</label>
+                            <input type="text" placeholder="Work Address" name="address" id="address" class="custom-form-control">
+                        </div>
+                    </div>
+                    <div class="col-sm-6" *ngIf="showOrgField">
+                        <div class="form-group">
+                            <label for="">Work E-mail</label>
+                            <input type="text" placeholder="Work E-mail" name="workEmail" id="workEmail" class="custom-form-control">
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="row">
                             <div class="col-sm-5">
                                 <div class="form-group">
+                                    <label for="">Country Code</label>
                                     <input type="text" placeholder="Country" name="Country" id="Country" class="custom-form-control" required
                                         [(ngModel)]="signupUserDetails.Country" #country="ngModel">
                                     <div *ngIf="country.invalid && (country.dirty || country.touched || signupform.submitted)"
@@ -179,6 +206,7 @@
                             </div>
                             <div class="col-sm-7">
                                 <div class="form-group">
+                                    <label for="">Phone Number</label>
                                     <input type="number" placeholder="Phone Number" name="PhoneNumber" id="PhoneNumber"
                                         class="custom-form-control" required [(ngModel)]="signupUserDetails.PhoneNumber"
                                         #phonenumber="ngModel">
@@ -192,8 +220,8 @@
                     </div>
                     <div class="col-sm-12">
                         <div class="style-check">
-                            <input type="checkbox" id="hideName" name="hideName" />
-                            <span for="hideName">Agreed to the <b class="anchor-tag">Terms</b> & <b class="anchor-tag">Privacy Policy</b></span>
+                            <input type="checkbox" id="hideName" name="agree" />
+                            <span for="agree">Agreed to the <b class="anchor-tag">Terms</b> & <b class="anchor-tag">Privacy Policy</b></span>
                         </div>
                     </div>
                     <div class="col-sm-12 text-center">
