@@ -1166,33 +1166,11 @@ textarea.custom-form-control{
     border: 0;
   }
 }
-.notification-setting-main {
-  display: flex;
-  justify-content: space-between;
-  @media(max-width : $breakpoint-mobile){
-    display: block;
-  }
-  .notify-set-left {
-    flex-basis: 45%;
-    background: #F4F8F9;
-    border: 1px solid #DDE6E8;
-    padding: 15px 20px;
-    @media(max-width : $breakpoint-mobile){
-      margin-bottom: 30px;
-    }
-  }
-  .notify-set-right {
-    flex-basis: 55%;
-    padding-left: 70px;
-    @media(max-width : $breakpoint-mobile){
-      padding-left: 0;
-    }
-  }
-  .notify-set-left h3 {
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .notify-set-right .nsetting-block {
+.notify-setting {
+  background-color: #F4F8F9;
+  border: 1px solid #DDE6E8;
+  padding: 20px;
+  .nsetting-block {
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
