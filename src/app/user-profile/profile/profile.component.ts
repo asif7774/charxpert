@@ -17,7 +17,6 @@ export class ProfileComponent implements OnInit {
 
   ProScheduleShow: boolean = true;
   ProMyprofileShow: boolean = false;
-  ProNotificationShow: boolean = false;
   ProPaymentShow:boolean = false;
   ProTransactionShow:boolean = false;
   ProPreferencesShow:boolean = false;
@@ -41,7 +40,6 @@ export class ProfileComponent implements OnInit {
   ProSchedule(){
     this.ProScheduleShow = true;
     this.ProMyprofileShow = false;
-    this.ProNotificationShow = false;
     this.ProPaymentShow = false;
     this.ProTransactionShow = false;
     this.ProPreferencesShow = false;
@@ -51,7 +49,6 @@ export class ProfileComponent implements OnInit {
   ProMyprofile(){
     this.ProScheduleShow = false;
     this.ProMyprofileShow = true;
-    this.ProNotificationShow = false;
     this.ProPaymentShow = false;
     this.ProTransactionShow = false;
     this.ProPreferencesShow = false;
@@ -61,7 +58,6 @@ export class ProfileComponent implements OnInit {
   ProNotification(){
     this.ProScheduleShow = false;
     this.ProMyprofileShow = false;
-    this.ProNotificationShow = true;
     this.ProPaymentShow = false;
     this.ProTransactionShow = false;
     this.ProPreferencesShow = false;
@@ -69,7 +65,6 @@ export class ProfileComponent implements OnInit {
   ProPayment(){
     this.ProScheduleShow = false;
     this.ProMyprofileShow = false;
-    this.ProNotificationShow = false;
     this.ProPaymentShow = true;
     this.ProTransactionShow = false;
     this.ProPreferencesShow = false;
@@ -77,7 +72,6 @@ export class ProfileComponent implements OnInit {
   ProTransaction(){
     this.ProScheduleShow = false;
     this.ProMyprofileShow = false;
-    this.ProNotificationShow = false;
     this.ProPaymentShow = false;
     this.ProTransactionShow = true;
     this.ProPreferencesShow = false;
@@ -85,7 +79,6 @@ export class ProfileComponent implements OnInit {
   ProPreferences(){
     this.ProScheduleShow = false;
     this.ProMyprofileShow = false;
-    this.ProNotificationShow = false;
     this.ProPaymentShow = false;
     this.ProTransactionShow = false;
     this.ProPreferencesShow = true;

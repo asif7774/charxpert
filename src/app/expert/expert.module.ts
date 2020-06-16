@@ -7,13 +7,16 @@ import { FindExpertsComponent } from './find-experts/find-experts.component';
 import { TrackQueryComponent } from './track-query/track-query.component';
 import { ExpertProfileComponent } from './expert-profile/expert-profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 @NgModule({
   declarations: [MyExpertsComponent, FindExpertsComponent, TrackQueryComponent, ExpertProfileComponent],
   imports: [
     CommonModule,
     ExpertRoutingModule,
-    NgbModule
+    NgbModule,
+    CKEditorModule
   ]
 })
 export class ExpertModule { }

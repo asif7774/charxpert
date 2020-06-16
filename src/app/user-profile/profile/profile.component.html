@@ -3,17 +3,14 @@
         <h3>Setting & Profile</h3>
         <div class="pro-set-tabs">
             <ul>
-                <li [ngClass]="ProScheduleShow ? 'active': ''">
-                    <span class="anchor-tag" (click)="ProSchedule()">Update My Schedule</span>
-                </li>
                 <li [ngClass]="ProMyprofileShow ? 'active': ''">
                     <span class="anchor-tag" (click)="ProMyprofile()">Update My Profile</span>
                 </li>
-                <li [ngClass]="ProNotificationShow ? 'active': ''">
-                    <span class="anchor-tag" (click)="ProNotification()">Topics & Notifications</span>
+                <li [ngClass]="ProScheduleShow ? 'active': ''">
+                    <span class="anchor-tag" (click)="ProSchedule()">Update My Schedule</span>
                 </li>
                 <li [ngClass]="ProPaymentShow ? 'active': ''">
-                    <span class="anchor-tag" (click)="ProPayment()">Payment Related</span>
+                    <span class="anchor-tag" (click)="ProPayment()">Payments & Banking</span>
                 </li>
                 <li [ngClass]="ProTransactionShow ? 'active': ''">
                     <span class="anchor-tag" (click)="ProTransaction()">Transactions</span>
@@ -144,65 +141,6 @@
                 </div>
             </div>
         </div><!-- proset-profile -->
-        <div class="proset-topics" *ngIf="ProNotificationShow">
-            <div class="notification-setting-main">
-                <div class="notify-set-left">
-                    <h3>My Topics of Interest</h3>
-                    <div class="chipset-theme">
-                        <tag-input placeholder="Add Accomplishments"></tag-input>
-                    </div>
-                </div>
-                <div class="notify-set-right">
-                    <div class="notify-setting">
-                        <div class="nsetting-block">
-                            <div class="nsetting-title">
-                                SMS Reminders
-                            </div>
-                            <div class="nsetting-title-toggle">
-                                <label class="notify-toggle">
-                                    <input type="checkbox" id="smsReminder" name="smsReminder">
-                                    <span>&nbsp;</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="nsetting-block">
-                            <div class="nsetting-title">
-                                Email Reminders
-                            </div>
-                            <div class="nsetting-title-toggle">
-                                <label class="notify-toggle">
-                                    <input type="checkbox" id="emailReminder" name="emailReminder">
-                                    <span>&nbsp;</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="nsetting-block">
-                            <div class="nsetting-title">
-                                New Query Notifications
-                            </div>
-                            <div class="nsetting-title-toggle">
-                                <label class="notify-toggle">
-                                    <input type="checkbox" id="queryNotification" name="queryNotification">
-                                    <span>&nbsp;</span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="nsetting-block">
-                            <div class="nsetting-title">
-                                Would you like to receive invites from other clients who need your expertise on issues
-                                they are dealing with?
-                            </div>
-                            <div class="nsetting-title-toggle">
-                                <label class="notify-toggle">
-                                    <input type="checkbox" id="receiveInvites" name="receiveInvites">
-                                    <span>&nbsp;</span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div><!-- proset-topics -->
         <div class="proset-payment" *ngIf="ProPaymentShow">
             <form action="" name="" id="">
                 <div class="payment-main">
@@ -481,46 +419,95 @@
 
         </div><!-- proset-transaction -->
         <div class="proset-preferences" *ngIf="ProPreferencesShow">
-            <div class="preference-block">
-                <h4>As an Expert</h4>
-                <p>Companies or Industries types that I cannot consult with</p>
-                <div class="chipset-theme">
-                    <tag-input placeholder="Add Accomplishments"></tag-input>
-                </div>
-            </div>
-            <div class="preference-block">
-                <h4>As an Expert</h4>
-                <p>Companies or Industries types that I cannot consult with</p>
-                <div class="preferences-documents">
-                    <div class="pref-docs">
-                        <div class="filename">
-                            Upload Documents
-                        </div>
-                        <div class="file-upload">
-                            <input type="file">
-                            <span>Browse Document</span>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="preference-block">
+                        <h4>As a Client</h4>
+                        <p>Agreement (All the experts I interact with needs to sign this)</p>
+                        <div class="preferences-documents">
+                            <div class="pref-docs">
+                                <div class="filename">
+                                    Upload Documents
+                                </div>
+                                <div class="file-upload">
+                                    <input type="file">
+                                    <span>Browse Document</span>
+                                </div>
+                            </div>
+                            <div class="files-names">
+                                <label class="file-tag">
+                                    NDA-XYZ-Company.pdf 
+                                    <span>
+                                        <svg viewBox="0 0 475 475" class="icon">
+                                            <use xlink:href="#close"></use>
+                                        </svg>
+                                    </span>
+                                </label>
+                                <label class="file-tag">
+                                    NDA-XYZ-Company.pdf 
+                                    <span>
+                                        <svg viewBox="0 0 475 475" class="icon">
+                                            <use xlink:href="#close"></use>
+                                        </svg>
+                                    </span>
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <div class="files-names">
-                        <label class="file-tag">
-                            NDA-XYZ-Company.pdf 
-                            <span>
-                                <svg viewBox="0 0 475 475" class="icon">
-                                    <use xlink:href="#close"></use>
-                                </svg>
-                            </span>
-                        </label>
-                        <label class="file-tag">
-                            NDA-XYZ-Company.pdf 
-                            <span>
-                                <svg viewBox="0 0 475 475" class="icon">
-                                    <use xlink:href="#close"></use>
-                                </svg>
-                            </span>
-                        </label>
+                    <div class="preference-block">
+                        <h4>As an Expert</h4>
+                        <p>Companies or Industries types that I cannot consult with</p>
+                        <div class="chipset-theme">
+                            <tag-input placeholder="Add Company / Industry"></tag-input>
+                        </div>
+                    </div>
+                    <div class="preference-block">
+                        <h4>As an Expert (My Topics of Interest)</h4>
+                        <p>Agreement (All the experts I interact with needs to sign this)</p>
+                        <div class="chipset-theme">
+                            <tag-input placeholder="Add Topic"></tag-input>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-sm-4">
+                    <div class="notify-setting">
+                        <div class="nsetting-block">
+                            <div class="nsetting-title">
+                                SMS Reminders
+                            </div>
+                            <div class="nsetting-title-toggle">
+                                <label class="notify-toggle">
+                                    <input type="checkbox" id="smsReminder" name="smsReminder">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="nsetting-block">
+                            <div class="nsetting-title">
+                                Email Reminders
+                            </div>
+                            <div class="nsetting-title-toggle">
+                                <label class="notify-toggle">
+                                    <input type="checkbox" id="emailReminder" name="emailReminder">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="nsetting-block">
+                            <div class="nsetting-title">
+                                New Query Notifications
+                            </div>
+                            <div class="nsetting-title-toggle">
+                                <label class="notify-toggle">
+                                    <input type="checkbox" id="queryNotification" name="queryNotification">
+                                    <span>&nbsp;</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>           
+            
         </div><!-- proset-preferences -->
     </div>
 </div>
