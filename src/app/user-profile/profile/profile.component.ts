@@ -15,8 +15,8 @@ export class ProfileComponent implements OnInit {
 
   viewDate: Date = new Date();
 
-  ProScheduleShow: boolean = true;
-  ProMyprofileShow: boolean = false;
+  ProScheduleShow: boolean = false;
+  ProMyprofileShow: boolean = true;
   ProPaymentShow:boolean = false;
   ProTransactionShow:boolean = false;
   ProPreferencesShow:boolean = false;

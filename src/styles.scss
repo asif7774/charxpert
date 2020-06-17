@@ -1026,26 +1026,89 @@ textarea.custom-form-control{
   }
   .usr-pro-left {
     flex-basis: 260px;
-    background: #F4F8F9;
-    position: relative;
-    border: 1px solid #DDE6E8;
-    padding: 0 20px 20px;
-    margin-top: 80px;
-    text-align: center;
+    background: #ffffff;
+    box-shadow: 0px 0px 11.76px 0.24px rgba(0, 0, 0, 0.1);
     @media(max-width : $breakpoint-mobile){
       margin-bottom: 30px;
+    }
+    ul{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      li{
+        padding: 11px 15px 11px 27px;
+        position: relative;
+        font-size: 12px;
+        color: #999999;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin: 15px 0;
+        letter-spacing: 1px;
+        &:hover{
+          color: #111111;
+        }
+        &:before{
+          content: "";
+          position: absolute;
+          top: 0;
+          @extend %update-btn-bg;
+          left: 0;
+          width: 4px;
+          height: 100%;
+          display: none;
+        }
+      }
+      li.active{
+        color: #111111;
+        &:before{
+          display: block;
+        }
+      }
+    }
+    .usr-profile-action {
+      margin-top: 30px;
+      .delete-acc-btn {
+        background: #fff;
+        color: #F00332;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 10px 20px;
+        display: inline-block;
+     }    
+    }  
+  }
+  .usr-pro-right {
+    flex-basis: calc(100% - 260px);
+    margin-left: 30px;
+    background: #ffffff;
+    margin-top: 34px;
+    padding: 15px 20px;
+    box-shadow: 0px 0px 11.76px 0.24px rgba(0, 0, 0, 0.1);
+    @media(max-width : $breakpoint-mobile){
+      margin-left: 0;
+      margin-top: 50px;
     }
     .usr-pro-img {
       width: 120px;
       height: 120px;
       overflow: hidden;
       border-radius: 50%;
-      margin: -80px auto 0 auto;
       position: relative;
       border: 1px solid #f4f8f9;
+      @media(max-width : $breakpoint-mobile){
+        min-width: 80px;
+        width: 80px;
+        height: 80px;
+      }
       img {
         max-width: 100%;
         min-height: 120px;
+        @media(max-width : $breakpoint-mobile){
+          min-height: 80px;
+        }
       }
     }
     .add-edit-proile {
@@ -1054,7 +1117,7 @@ textarea.custom-form-control{
       text-align: center;
       overflow: hidden;
       display: inline-block;
-      margin-top: 18px;
+      margin-top: 25px;
       margin-bottom: 25px;
       span {
         @extend %update-btn-bg;
@@ -1080,26 +1143,35 @@ textarea.custom-form-control{
     .usr-profile-hide {
       text-align: left;      
     }
-    .usr-profile-action {
-      margin-top: 30px;
-      .delete-acc-btn {
-        background: #fff;
-        color: #F00332;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        padding: 10px 20px;
-        display: inline-block;
-     }    
-    }  
-  }
-  .usr-pro-right {
-    flex-basis: calc(100% - 260px);
-    padding-left: 30px;
-    @media(max-width : $breakpoint-mobile){
-      padding-left: 0;
+    .usr-profile-view {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: -50px;
+      margin-bottom: 20px;
+      @media(max-width : $breakpoint-mobile){
+        display: block;
+      }
+    }    
+    .usr-profile-view-left {
+      display: flex;
+      align-items: center;
+    }    
+    .usr-profile-view-right {
+      display: flex;  
+      @media(max-width : $breakpoint-mobile){
+        display: block;
+      }  
+      .style-check {
+        margin-left: 40px;
+        margin-bottom: 0;
+        @media(max-width : $breakpoint-mobile){
+          margin-left: 0;
+        }  
+      }
+    }    
+    .usr-profile-view-left .usr-pro-img {
+      margin-right: 30px;
     }
   }
 }

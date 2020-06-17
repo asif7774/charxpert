@@ -30,30 +30,39 @@
         <div class="proset-profile" *ngIf="ProMyprofileShow">
             <div class="usr-profile-details">
                 <div class="usr-pro-left">
-                    <div class="usr-pro-img">
-                        <img src="https://www.abc.net.au/radionational/image/6584190-1x1-340x340.jpg" alt="">
-                    </div>
-                    <div class="add-edit-proile">
-                        <input type="file" name="" id="">
-                        <span>Add/Edit Profile Picture</span>
-                    </div>
-                    <div class="usr-profile-hide">
-                        <div class="style-check">
-                            <input type="checkbox" id="hideName" name="hideName" />
-                            <span for="hideName">Hide my name</span>
-                        </div>
-                        <div class="style-check">
-                            <input type="checkbox" id="hidePic" name="hidePic" />
-                            <span for="hideName">Hide my profile picture</span>
-                        </div>
-                    </div>
-                    <div class="usr-profile-action">
-                        <span class="anchor-tag delete-acc-btn">Delete My Account</span>
-                    </div>
+                    <div class="usr-pro-sidebar">
+                        <ul>
+                            <li class="anchor-tag active">GENERAL INFO</li>
+                            <li class="anchor-tag">EXPERIENCE</li>
+                            <li class="anchor-tag">EDUCATION</li>
+                            <li class="anchor-tag">OTHER NOTABLES</li>
+                        </ul>
+                    </div>                    
                 </div>
                 <div class="usr-pro-right">
-                    <h3>General Info</h3>
                     <div class="usr-pro-form">
+                        <div class="usr-profile-view">
+                            <div class="usr-profile-view-left">
+                                <div class="usr-pro-img">
+                                    <img src="https://www.abc.net.au/radionational/image/6584190-1x1-340x340.jpg" alt="">
+                                </div>
+                                <div class="add-edit-proile">
+                                    <input type="file" name="" id="">
+                                    <span>Add/Edit Profile Picture</span>
+                                </div>
+                            </div>
+                            <div class="usr-profile-view-right">
+                                <div class="style-check">
+                                    <input type="checkbox" id="hideName" name="hideName" />
+                                    <span for="hideName">Hide my name</span>
+                                </div>
+                                <div class="style-check">
+                                    <input type="checkbox" id="hidePic" name="hidePic" />
+                                    <span for="hideName">Hide my profile picture</span>
+                                </div>
+                            </div>
+                        </div>
+
                         <form action="" method="">
                             <div class="row">
                                 <div class="col-sm-6">
@@ -125,9 +134,15 @@
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <label for="">Your official email ID</label>
+                                        <label for="">Title</label>
                                         <input type="text" class="custom-form-control" name="OfficialEmail" id="OfficialEmail"
                                             placeholder="Your official email ID" [(ngModel)]="userDetailsModel.officialEmail" #fullNameValue="ngModel"/>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label for="">About</label>
+                                        <textarea class="custom-form-control" name="" id="" rows="3" placeholder="About"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
