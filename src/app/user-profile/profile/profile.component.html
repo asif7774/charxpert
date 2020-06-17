@@ -32,14 +32,14 @@
                 <div class="usr-pro-left">
                     <div class="usr-pro-sidebar">
                         <ul>
-                            <li class="anchor-tag active">GENERAL INFO</li>
-                            <li class="anchor-tag">EXPERIENCE</li>
-                            <li class="anchor-tag">EDUCATION</li>
-                            <li class="anchor-tag">OTHER NOTABLES</li>
+                            <li class="anchor-tag" [ngClass]="usrGenInfoShow ? 'active': ''" (click)="ProGenInfo()">GENERAL INFO</li>
+                            <li class="anchor-tag" [ngClass]="userExperienceShow ? 'active': ''" (click)="ProExp()">EXPERIENCE</li>
+                            <li class="anchor-tag" [ngClass]="userEducationShow ? 'active': ''" (click)="ProEdu()">EDUCATION</li>
+                            <li class="anchor-tag" [ngClass]="userOtherShow ? 'active': ''" (click)="ProOth()">OTHER NOTABLES</li>
                         </ul>
                     </div>                    
                 </div>
-                <div class="usr-pro-right">
+                <div class="usr-pro-right" *ngIf="usrGenInfoShow">
                     <div class="usr-pro-form">
                         <div class="usr-profile-view">
                             <div class="usr-profile-view-left">
@@ -154,6 +154,9 @@
                         </form>
                     </div>
                 </div>
+                <div class="usr-pro-right-exp" *ngIf="userExperienceShow">Experience</div>
+                <div class="usr-pro-right-edu" *ngIf="userEducationShow">Education</div>
+                <div class="usr-pro-right-oth" *ngIf="userOtherShow">Other</div>
             </div>
         </div><!-- proset-profile -->
         <div class="proset-payment" *ngIf="ProPaymentShow">

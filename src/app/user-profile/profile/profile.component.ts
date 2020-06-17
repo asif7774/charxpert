@@ -21,6 +21,11 @@ export class ProfileComponent implements OnInit {
   ProTransactionShow:boolean = false;
   ProPreferencesShow:boolean = false;
 
+  usrGenInfoShow:boolean = true;
+  userExperienceShow:boolean = false;
+  userEducationShow:boolean = false;
+  userOtherShow:boolean = false;
+
   events: CalendarEvent[] = [
     {
       title: 'No event end date',
@@ -82,6 +87,31 @@ export class ProfileComponent implements OnInit {
     this.ProPaymentShow = false;
     this.ProTransactionShow = false;
     this.ProPreferencesShow = true;
+  }
+
+  ProGenInfo(){
+   this.usrGenInfoShow = true;
+    this.userExperienceShow = false;
+    this.userEducationShow = false;
+    this.userOtherShow = false;
+  }
+  ProExp(){
+    this.usrGenInfoShow = false;
+    this.userExperienceShow = true;
+    this.userEducationShow = false;
+    this.userOtherShow = false;
+  }
+  ProEdu(){
+    this.usrGenInfoShow = false;
+    this.userExperienceShow = false;
+    this.userEducationShow = true;
+    this.userOtherShow = false;
+  }
+  ProOth(){
+   this. usrGenInfoShow = false;
+    this.userExperienceShow = false;
+    this.userEducationShow = false;
+    this.userOtherShow = true;
   }
 
   DeleteUser() {
