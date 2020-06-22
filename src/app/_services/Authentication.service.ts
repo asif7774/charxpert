@@ -7,7 +7,7 @@ import { SignUpUserModel } from '../_models/SignUpUserModel';
 })
 export class AuthenticationService {
   constructor(private httpClient: HttpClient) {}
-  baseUrl = 'http://35.208.129.61:80';
+  baseUrl = 'http://127.0.0.1:8000';
 
   /**
    * This Service is used for calling sign up of a user API.

@@ -120,7 +120,7 @@ export class ProfileComponent implements OnInit {
 
   GetUserInfo() {
 this.userService.GetUserInfo().subscribe(
-  data => {
+  data => {debugger
     // this.userDetailsModel.fullName = data.user.first_name
     console.log(data);
   });

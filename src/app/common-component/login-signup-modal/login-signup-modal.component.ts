@@ -5,6 +5,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { AuthenticationService } from 'src/app/_services/Authentication.service';
 import { CommonService } from 'src/app/_services/Common/Common.service';
 import { Subscription, Observable } from 'rxjs';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login-signup-modal',
@@ -26,7 +27,7 @@ export class LoginSignupModalComponent implements OnInit, OnDestroy {
 
   loginShow: boolean = false;
   @Output() public  signupShow: boolean = false;
-  constructor(private modalService: NgbModal, private authService: AuthenticationService, private common: CommonService) {}
+  constructor(private modalService: NgbModal, private authService: AuthenticationService, private common: CommonService,private cookieService: CookieService) {}
 
   ngOnInit(){
     this.eventsSubscription = this.events.subscribe((data) => {
@@ -72,9 +73,11 @@ export class LoginSignupModalComponent implements OnInit, OnDestroy {
         setTimeout(() => {
           this.common.show_toast('s', 'User LoggedIn successfully.');
         }, 2);
-        this.GetUserInfo();
-        console.log(data.headers.get('csrftoken'));
-        console.log('test - ', this.common.getCookie('csrftoken'));
+        // let token = this.cookieService.get('csrftoken');
+        // this.GetUserInfo();
+        // console.log('Token' + token);
+        console.log(this.cookieService.getAll());
+        console.log(this.cookieService.get('csrftoken'));
         console.log(data);
         localStorage.setItem('LoginDetails', JSON.stringify(userDetails));
         this.modalService.dismissAll();

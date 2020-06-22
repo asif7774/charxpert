@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { CustomLayoutModule } from './@layout/customLayout.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './core/shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { TokenInterceptor } from './_interceptor/TokenInterceptor';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,7 @@ import { FormsModule } from '@angular/forms';
     NoopAnimationsModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }, CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

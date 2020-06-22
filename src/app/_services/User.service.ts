@@ -6,7 +6,7 @@ import { CommonService } from './Common/Common.service';
   providedIn: 'root'
 })
 export class UserService {
-  baseUrl = 'http://35.208.129.61:80';
+  baseUrl = 'http://127.0.0.1:8000';
 constructor(private httpClient: HttpClient, private common: CommonService) { }
 
 /**
