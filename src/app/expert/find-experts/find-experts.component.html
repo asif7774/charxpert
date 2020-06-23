@@ -58,7 +58,9 @@
                                         <div class="call-head">
                                             <div class="call-user-info">
                                                 <div class="call-user-img">
-                                                    <span><img src="https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg" alt=""></span>
+                                                    <span><img
+                                                            src="https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg"
+                                                            alt=""></span>
                                                 </div>
                                                 <div class="call-user-name">
                                                     <h3>John Doe</h3>
@@ -70,7 +72,7 @@
                                             </div>
                                             <div class="call-rates">
                                                 <label>$50</label>
-                                                <span>Per hour</span>                                
+                                                <span>Per hour</span>
                                             </div>
                                         </div>
                                         <div class="my-exp-body">
@@ -95,7 +97,9 @@
                                         <div class="call-head">
                                             <div class="call-user-info">
                                                 <div class="call-user-img">
-                                                    <span><img src="https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg" alt=""></span>
+                                                    <span><img
+                                                            src="https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg"
+                                                            alt=""></span>
                                                 </div>
                                                 <div class="call-user-name">
                                                     <h3>John Doe</h3>
@@ -107,7 +111,7 @@
                                             </div>
                                             <div class="call-rates">
                                                 <label>$50</label>
-                                                <span>Per hour</span>                                
+                                                <span>Per hour</span>
                                             </div>
                                         </div>
                                         <div class="my-exp-body">
@@ -132,7 +136,9 @@
                                         <div class="call-head">
                                             <div class="call-user-info">
                                                 <div class="call-user-img">
-                                                    <span><img src="https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg" alt=""></span>
+                                                    <span><img
+                                                            src="https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg"
+                                                            alt=""></span>
                                                 </div>
                                                 <div class="call-user-name">
                                                     <h3>John Doe</h3>
@@ -144,7 +150,7 @@
                                             </div>
                                             <div class="call-rates">
                                                 <label>$50</label>
-                                                <span>Per hour</span>                                
+                                                <span>Per hour</span>
                                             </div>
                                         </div>
                                         <div class="my-exp-body">
@@ -175,7 +181,7 @@
 <!-- Chat session -->
 <div class="chat-box-main">
     <div class="skip-chat-btn">
-        <span>Skip 
+        <span>Skip
             <svg viewBox="0 0 475 475" class="icon">
                 <use xlink:href="#close"></use>
             </svg>
@@ -184,7 +190,8 @@
     <div class="chat-box">
         <div class="chat-head">
             <h3>Chat Session</h3>
-            <p>On the basis of your query, we want to ask approx 4-5 questions, which will help us to searh best available results.</p>
+            <p>On the basis of your query, we want to ask approx 4-5 questions, which will help us to searh best
+                available results.</p>
         </div>
         <div class="chat-body">
             <div class="chat-bot">
@@ -207,7 +214,9 @@
                     </div>
                     <div class="msg-timing">Just now</div>
                 </div>
-                <div class="user-icon"><img src="https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg" alt="ChatXpert"></div>
+                <div class="user-icon"><img
+                        src="https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg"
+                        alt="ChatXpert"></div>
             </div>
             <div class="end-chat">
                 <button class="end-chat-btn">end chat session</button>
@@ -218,7 +227,7 @@
             <button class="send-chat-btn">
                 <svg class="icon" viewBox="0 0 485.725 485.725">
                     <use xlink:href="#send"></use>
-                  </svg>
+                </svg>
             </button>
         </div>
     </div>
@@ -226,13 +235,16 @@
 <!-- When chatbox open yhis div should show for overlay -->
 <!-- <div class="overlay"></div> -->
 
-<!-- <button class="btn btn-outline-primary" (click)="queryModal(content)">Large modal</button> -->
+<button class="btn btn-outline-primary" (click)="queryModal(contentQS)">Query Summary Modal</button>
+<button class="btn btn-outline-primary" (click)="queryModal(contentQM)">Screening question Modal</button>
 
-<ng-template #content let-modal>
+<ng-template #contentQS let-modal>
     <div class="theme-modal">
         <div class="modal-close">
             <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-                <span aria-hidden="true">&times;</span>
+                <svg viewBox="0 0 475 475" class="icon">
+                    <use xlink:href="#close"></use>
+                </svg>
             </button>
         </div>
         <div class="query-modal-content">
@@ -242,7 +254,7 @@
                     <p>Below is the summary of your query, Please have a look at it before submit.</p>
                 </div>
                 <div class="modal-query-reset">
-                    <button class="btn-red">Reset</button>
+                    <button class="theme-btn-tursary">Reset</button>
                 </div>
             </div>
             <form action="">
@@ -269,19 +281,150 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label for="">No. of hours required (Approx)</label>
-                                <input type="text" class="custom-form-control" placeholder="No. of hours required (Approx)" />
+                                <input type="text" class="custom-form-control"
+                                    placeholder="No. of hours required (Approx)" />
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <button class="btn-green">
+                    <div class="form-group text-right">
+                        <button class="theme-btn-secondary btn-notify mr-2">
                             <span class="query-count">3</span>
                             ADD SCREENING QUESTIONS
                         </button>
-                        <button class="btn-gradient">Submit</button>
-                    </div>                    
+                        <button class="theme-btn-primary">Submit</button>
+                    </div>
                 </div>
             </form>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #contentQM let-modal>
+    <div class="theme-modal">
+        <div class="modal-close">
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <svg viewBox="0 0 475 475" class="icon">
+                    <use xlink:href="#close"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="query-modal-content">
+            <div class="query-modal-head">
+                <div class="modal-query-title query-modal-dropdown pr-0">
+                    <h3>
+                        Screening Questions
+                        <div ngbDropdown class="question-dropdown">
+                            <button class="btn-que-dropdown theme-btn-secondary" id="dropdownBasic1" ngbDropdownToggle>
+                                + Add Question
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                                <button ngbDropdownItem>Multi Choice</button>
+                                <button ngbDropdownItem>Single Choice</button>
+                                <button ngbDropdownItem>Open Ended</button>
+                            </div>
+                        </div>
+                    </h3>
+                    <p>Create screening questions for the candidates by selecting from the template below. You can
+                        create as many questions as you want. There are options to create multiple choice questions and
+                        open ended questions.</p>
+                </div>
+            </div>
+            <div class="query-modal-body">
+                <div class="question-block">
+                    <div class="question-no">
+                        1.
+                    </div>
+                    <div class="question-view">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="">Type your question</label>
+                                    <input type="text" id="" class="custom-form-control" placeholder="Enter question">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="">Option 1</label>
+                                            <input type="text" id="" class="custom-form-control" placeholder="Option">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="">Option 2</label>
+                                            <input type="text" id="" class="custom-form-control" placeholder="Option">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="">Option 3</label>
+                                            <input type="text" id="" class="custom-form-control" placeholder="Option">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="form-group">
+                                            <label for="">Option 4</label>
+                                            <input type="text" id="" class="custom-form-control" placeholder="Option">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="question-block">
+                    <div class="question-no">
+                        2.
+                    </div>
+                    <div class="question-view">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="">Type your question</label>
+                                    <input type="text" id="" class="custom-form-control" placeholder="Enter question">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="">Type your answer</label>
+                                    <input type="text" id="" class="custom-form-control" placeholder="Type your answer">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="question-block">
+                    <div class="question-no">
+                        3.
+                    </div>
+                    <div class="question-view">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="">Type your question</label>
+                                    <input type="text" id="" class="custom-form-control" placeholder="Enter question">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">Option 1</label>
+                                    <input type="text" id="" class="custom-form-control" placeholder="Option">
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label for="">Option 2</label>
+                                    <input type="text" id="" class="custom-form-control" placeholder="Option">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group text-right">
+                    <button class="theme-btn-primary">add screening questions</button>
+                </div>
+            </div>
         </div>
     </div>
 </ng-template>
