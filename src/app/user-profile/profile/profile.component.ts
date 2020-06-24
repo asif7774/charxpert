@@ -3,6 +3,7 @@ import { CalendarEvent, CalendarView } from 'angular-calendar';
 import { setHours, setMinutes } from 'date-fns';
 import { UserService } from 'src/app/_services/User.service';
 import { UserProfileModel } from 'src/app/_models/UserProfileModel';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-profile',
@@ -37,7 +38,7 @@ export class ProfileComponent implements OnInit {
     },
   ];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
@@ -133,4 +134,9 @@ this.userService.GetUserInfo().subscribe(
       }
     )
   }
+
+  reviewModal(content) {
+    this.modalService.open(content, { size: 'lg', centered: true });
+  }
+
 }
