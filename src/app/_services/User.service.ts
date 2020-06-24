@@ -13,10 +13,6 @@ constructor(private httpClient: HttpClient, private common: CommonService) { }
  * Get deatil of user.
  */
 public GetUserInfo() {
-  const user = JSON.parse(localStorage.getItem('UserDetails'));
-  const httpOptions = {
-    headers: new HttpHeaders().set('Authorization', 'Basic ' + btoa(user.username + ':' + user.password))
-  };
   return this.httpClient.get(this.baseUrl + '/api/get_user_info/');
 }
 

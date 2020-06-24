@@ -1,21 +1,21 @@
 export class SignUpUserModel {
 
     // First Name of the user.
-    private firstName: string;
-    public get FirstName(): string {
-        return this.firstName;
+    private fullName: string;
+    public get FullName(): string {
+        return this.fullName;
     }
-    public set FirstName(v: string) {
-        this.firstName = v;
+    public set FullName(v: string) {
+        this.fullName = v;
     }
 
     // Last Name of the user.
-    private lastName: string;
-    public get LastName(): string {
-        return this.lastName;
+    private userName: string;
+    public get UserName(): string {
+        return this.userName;
     }
-    public set LastName(v: string) {
-        this.lastName = v;
+    public set UserName(v: string) {
+        this.userName = v;
     }
 
     // Email of the user.
@@ -53,4 +53,23 @@ export class SignUpUserModel {
     public set PhoneNumber(v: string) {
         this.phoneNumber = v;
     }
+
+
+    private workMail: string;
+    public get WorkMail(): string {
+        return this.workMail;
+    }
+    public set WorkMail(v: string) {
+        this.workMail = v;
+    }
+
+
+    private workAddress: string;
+    public get WorkAddress(): string {
+        return this.workAddress;
+    }
+    public set WorkAddress(v: string) {
+        this.workAddress = v;
+    }
+    
 }

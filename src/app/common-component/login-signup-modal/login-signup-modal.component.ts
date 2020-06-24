@@ -22,6 +22,7 @@ export class LoginSignupModalComponent implements OnInit, OnDestroy {
   modalViewType: string;
   showOrgField: boolean = false;
   showCliField: boolean = false;
+  isExpert = false;
 
   signupUserDetails: SignUpUserModel = new SignUpUserModel();
 
@@ -66,7 +67,7 @@ export class LoginSignupModalComponent implements OnInit, OnDestroy {
     const userDetails = {
       userName : this.userName,
       password : this.password
-    }
+    };
     this.authService.SignInUser(this.userName, this.password).subscribe((data) => {
 
       if (data) {
@@ -76,8 +77,8 @@ export class LoginSignupModalComponent implements OnInit, OnDestroy {
         // let token = this.cookieService.get('csrftoken');
         // this.GetUserInfo();
         // console.log('Token' + token);
-        console.log(this.cookieService.getAll());
         console.log(this.cookieService.get('csrftoken'));
+        localStorage.setItem('Token', this.common.getCookie('csrftoken'));
         console.log(data);
         localStorage.setItem('LoginDetails', JSON.stringify(userDetails));
         this.modalService.dismissAll();

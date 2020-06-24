@@ -126,24 +126,24 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">Full Name</label>
-                            <input type="text" name="FirstName" id="FirstName" placeholder="Full Name" class="custom-form-control"
-                                pattern="[a-zA-Z ]*" required [(ngModel)]="signupUserDetails.FirstName" #firstname="ngModel">
-                            <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched || signupform.submitted)"
+                            <input type="text" name="FullName" id="FullName" placeholder="Full Name" class="custom-form-control"
+                                pattern="[a-zA-Z ]*" required [(ngModel)]="signupUserDetails.FullName" #fullname="ngModel">
+                            <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched || signupform.submitted)"
                                 class="text-error text-left">
-                                <div *ngIf="firstname.errors.required">First Name is required</div>
-                                <div *ngIf="firstname.hasError('pattern')">Please enter only alphabets</div>
+                                <div *ngIf="fullname.errors.required">Full Name is required</div>
+                                <div *ngIf="fullname.hasError('pattern')">Please enter only alphabets</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label for="">User Name</label>
-                            <input type="text" name="LastName" id="LastName" placeholder="User Name" class="custom-form-control"
-                                pattern="[a-zA-Z ]*" required [(ngModel)]="signupUserDetails.LastName" #lastname="ngModel">
-                            <div *ngIf="lastname.invalid && (lastname.dirty || lastname.touched || signupform.submitted)"
+                            <input type="text" name="UserName" id="UserName" placeholder="User Name" class="custom-form-control"
+                                pattern="[a-zA-Z ]*" required [(ngModel)]="signupUserDetails.UserName" #username="ngModel">
+                            <div *ngIf="username.invalid && (username.dirty || username.touched || signupform.submitted)"
                                 class="text-error text-left">
-                                <div *ngIf="lastname.errors.required">Last Name is required</div>
-                                <div *ngIf="lastname.hasError('pattern')">Please enter only alphabets</div>
+                                <div *ngIf="username.errors.required">Last Name is required</div>
+                                <div *ngIf="username.hasError('pattern')">Please enter only alphabets</div>
                             </div>
                         </div>
                     </div>
