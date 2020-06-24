@@ -5,11 +5,14 @@ import { ExpertProfileComponent } from './expert-profile/expert-profile.componen
 import { TrackQueryComponent } from './track-query/track-query.component';
 import { FindExpertsComponent } from './find-experts/find-experts.component';
 import { QueryAcknowledgeComponent } from './query-acknowledge/query-acknowledge.component';
+import { TrackQueryExpertComponent } from './track-query-expert/track-query-expert.component';
+import { TrackQueryClientComponent } from './track-query-client/track-query-client.component';
 
 const routes: Routes = [
   { path: 'my-experts', component: MyExpertsComponent },
   { path: 'expert-profile', component: ExpertProfileComponent },
-  { path: 'track-query', component: TrackQueryComponent },
+  { path: 'track-query-client', component: TrackQueryClientComponent },
+  { path: 'track-query-expert', component: TrackQueryExpertComponent },
   { path: 'find-expert', component: FindExpertsComponent },
   { path: 'acknowledge', component: QueryAcknowledgeComponent }
 ];

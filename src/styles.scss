@@ -2708,7 +2708,8 @@ textarea.custom-form-control{
             margin: 0 -15px;          
             .call-user {
               display: flex;
-              padding: 15px; 
+              padding: 8px 15px; 
+              align-items: center;
               @media(max-width : $breakpoint-tablet){
                 flex-basis: 100%;
               }         
