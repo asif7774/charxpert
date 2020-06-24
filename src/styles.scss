@@ -2602,11 +2602,32 @@ textarea.custom-form-control{
 }
 .track-query-main {
   display: flex;
+  @media(max-width : $breakpoint-tablet){
+    display: block;
+  }
+  .swith-view-btn {
+    text-align: right;
+    margin-bottom: 15px;
+    span {
+      color: #666666;
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: #F4F8F9;
+      border: 1px solid #DDE6E8;
+      display: inline-block;
+      padding: 10px 28px;
+      border-radius: 4px;
+    }
+  }
   .trackq-left-panel {
     width: 380px;
     background: #F4F8F9;
     border: 1px solid #DDE6E8;
     padding: 20px;
+    @media(max-width : $breakpoint-tablet){
+      width: 100%;
+    }
     .track-query-view {
       margin-bottom: 35px;
       p {
@@ -2624,6 +2645,9 @@ textarea.custom-form-control{
   .trackq-right-panel {
     flex-basis: calc(100% - 380px);
     padding: 35px;
+    @media(max-width : $breakpoint-mobile){
+      padding: 15px;
+    }   
     .timeline-main{
       position: relative;
       .timeline-line {
@@ -2637,6 +2661,7 @@ textarea.custom-form-control{
         display: flex;
         .timeline-status {
           width: 32px;
+          min-width: 32px;
           height: 32px;
           background: #fff;
           border: 1px solid #ccc;
@@ -2683,7 +2708,10 @@ textarea.custom-form-control{
             margin: 0 -15px;          
             .call-user {
               display: flex;
-              padding: 15px;          
+              padding: 15px; 
+              @media(max-width : $breakpoint-tablet){
+                flex-basis: 100%;
+              }         
               .call-usr-img {
                 width: 30px;
                 height: 30px;
@@ -2738,6 +2766,80 @@ textarea.custom-form-control{
               }
             }
           }
+        }
+      }
+    }
+  }
+}
+.timeline-experts {
+  margin: 0 -10px;
+  display: flex;
+  flex-wrap: wrap;
+  .timeline-experts-view {
+    position: relative;
+    padding: 10px 10px;
+    flex-basis: 50%;
+    @media(max-width : $breakpoint-tablet){
+      flex-basis: 100%;
+    }
+    .add-expert-view span {
+      color: #ffff;
+      font-size: 37px;
+      display: inline-block;
+    }
+    .call-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #F4F8F9;
+      border: 1px solid #DDE6E8;
+      padding: 10px;
+      position: relative;
+      .call-user-info {
+        .call-user-img {
+          width: 56px;
+          min-width: 56px;
+          height: 56px;
+          border-radius: 50%;
+          overflow: hidden;
+          margin-right: 12px;
+          img {
+            width: 100%;
+            height: auto;
+            min-height: 56px;
+          }
+        }
+        .call-user-name {
+          h3 {
+            margin: 0;
+            font-size: 13px;
+            font-weight: 600;
+          }
+          p {
+            margin: 0;
+            color: #7F9095;
+            font-size: 10px;
+            padding-bottom: 3px;
+          }
+        }
+        display: flex;
+        align-items: center;
+      }
+      .call-rates{
+        label{
+          font-size: 13px;
+          background: #10C573;
+          color: #fff;
+          border-radius: 3px;
+          margin: 0;
+          padding: 3px 9px;
+          display: inline-block;
+          text-align: center;
+        }
+        span{
+          display: block;
+          font-size: 11px;
+          color: #7F9095;
         }
       }
     }

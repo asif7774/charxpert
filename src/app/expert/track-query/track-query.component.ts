@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./track-query.component.scss']
 })
 export class TrackQueryComponent implements OnInit {
-
+  currentRate = 4;
   constructor() { }
 
   ngOnInit(): void {
