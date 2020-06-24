@@ -8,10 +8,11 @@ import { TrackQueryComponent } from './track-query/track-query.component';
 import { ExpertProfileComponent } from './expert-profile/expert-profile.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { QueryAcknowledgeComponent } from './query-acknowledge/query-acknowledge.component';
 
 
 @NgModule({
-  declarations: [MyExpertsComponent, FindExpertsComponent, TrackQueryComponent, ExpertProfileComponent],
+  declarations: [MyExpertsComponent, FindExpertsComponent, TrackQueryComponent, ExpertProfileComponent, QueryAcknowledgeComponent],
   imports: [
     CommonModule,
     ExpertRoutingModule,
