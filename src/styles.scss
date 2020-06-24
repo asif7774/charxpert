@@ -2845,3 +2845,28 @@ textarea.custom-form-control{
     }
   }
 }
+.pro-card-box {
+  border: 1px solid #DDE6E8;
+  background: #F4F8F9;
+  padding: 15px;
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  .remove-box {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    span {
+      background: #F00332;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: inline-block;
+      text-align: center;
+      line-height: 24px;
+      svg {
+        width: 10px;
+      }
+    }
+  }
+}

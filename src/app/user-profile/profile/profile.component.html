@@ -32,19 +32,24 @@
                 <div class="usr-pro-left">
                     <div class="usr-pro-sidebar">
                         <ul>
-                            <li class="anchor-tag" [ngClass]="usrGenInfoShow ? 'active': ''" (click)="ProGenInfo()">GENERAL INFO</li>
-                            <li class="anchor-tag" [ngClass]="userExperienceShow ? 'active': ''" (click)="ProExp()">EXPERIENCE</li>
-                            <li class="anchor-tag" [ngClass]="userEducationShow ? 'active': ''" (click)="ProEdu()">EDUCATION</li>
-                            <li class="anchor-tag" [ngClass]="userOtherShow ? 'active': ''" (click)="ProOth()">OTHER NOTABLES</li>
+                            <li class="anchor-tag" [ngClass]="usrGenInfoShow ? 'active': ''" (click)="ProGenInfo()">
+                                GENERAL INFO</li>
+                            <li class="anchor-tag" [ngClass]="userExperienceShow ? 'active': ''" (click)="ProExp()">
+                                EXPERIENCE</li>
+                            <li class="anchor-tag" [ngClass]="userEducationShow ? 'active': ''" (click)="ProEdu()">
+                                EDUCATION</li>
+                            <li class="anchor-tag" [ngClass]="userOtherShow ? 'active': ''" (click)="ProOth()">OTHER
+                                NOTABLES</li>
                         </ul>
-                    </div>                    
+                    </div>
                 </div>
-                <div class="usr-pro-right" *ngIf="usrGenInfoShow">
+                <div class="usr-pro-right">
                     <div class="usr-pro-form">
                         <div class="usr-profile-view">
                             <div class="usr-profile-view-left">
                                 <div class="usr-pro-img">
-                                    <img src="https://www.abc.net.au/radionational/image/6584190-1x1-340x340.jpg" alt="">
+                                    <img src="https://www.abc.net.au/radionational/image/6584190-1x1-340x340.jpg"
+                                        alt="">
                                 </div>
                                 <div class="add-edit-proile">
                                     <input type="file" name="" id="">
@@ -63,94 +68,299 @@
                             </div>
                         </div>
 
-                        <form action="" method="">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="">Full Name</label>
-                                        <input type="text" class="custom-form-control" name="FullName" id="FullName" placeholder="Full Name" [(ngModel)]="userDetailsModel.fullName" #fullNameValue="ngModel"/>
+                        <div class="usr-gen-pro" *ngIf="usrGenInfoShow">
+                            <form action="" id="genForm" method="">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Full Name</label>
+                                            <input type="text" class="custom-form-control" name="FullName" id="FullName"
+                                                placeholder="Full Name" [(ngModel)]="userDetailsModel.fullName"
+                                                #fullNameValue="ngModel" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="">User Name/Display Name</label>
-                                        <input type="text" class="custom-form-control" name="UserName" id="UserName"
-                                            placeholder="User Name/Display Name" [(ngModel)]="userDetailsModel.fullName" #fullNameValue="ngModel"/>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">User Name/Display Name</label>
+                                            <input type="text" class="custom-form-control" name="UserName" id="UserName"
+                                                placeholder="User Name/Display Name"
+                                                [(ngModel)]="userDetailsModel.fullName" #fullNameValue="ngModel" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="">Password</label>
-                                        <div class="psw-group">
-                                            <input type="password" class="custom-form-control" name="Password" id="Password" placeholder="Password" [(ngModel)]="userDetailsModel.password" #passwordValue="ngModel"/>
-                                            <span>Show password</span>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Password</label>
+                                            <div class="psw-group">
+                                                <input type="password" class="custom-form-control" name="Password"
+                                                    id="Password" placeholder="Password"
+                                                    [(ngModel)]="userDetailsModel.password" #passwordValue="ngModel" />
+                                                <span>Show password</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Email</label>
+                                            <input type="text" class="custom-form-control" name="Email" id="Email"
+                                                placeholder="Email" [(ngModel)]="userDetailsModel.email"
+                                                #emailValue="ngModel" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="">Hourly Rate ($)</label>
+                                            <input type="text" class="custom-form-control" name="HourlyRate"
+                                                id="HourlyRate" placeholder="Hourly Rate ($)"
+                                                [(ngModel)]="userDetailsModel.hourlyRate" #hourlyRideValue="ngModel" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="row">
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label for="">Country</label>
+                                                    <input type="text" class="custom-form-control" name="Country"
+                                                        id="Country" placeholder="Country"
+                                                        [(ngModel)]="userDetailsModel.country"
+                                                        #countryValue="ngModel" />
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-7">
+                                                <div class="form-group">
+                                                    <label for="">Phone Number</label>
+                                                    <input type="text" class="custom-form-control" name="PhoneNumber"
+                                                        id="PhoneNumber" placeholder="Phone Number"
+                                                        [(ngModel)]="userDetailsModel.phoneNumber"
+                                                        #phoneNumberValue="ngModel" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">Linkedin Profile URL</label>
+                                            <div class="import-group">
+                                                <input type="text" class="custom-form-control"
+                                                    placeholder="Linkedin Profile URL" />
+                                                <span class="anchor-tag">Import Profile</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">Title</label>
+                                            <input type="text" class="custom-form-control" name="OfficialEmail"
+                                                id="OfficialEmail" placeholder="Your official email ID"
+                                                [(ngModel)]="userDetailsModel.officialEmail" #fullNameValue="ngModel" />
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="">About</label>
+                                            <textarea class="custom-form-control" name="" id="" rows="3"
+                                                placeholder="About"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <div class="form-group text-right">
+                                            <button class="theme-btn-primary">Save and next</button>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="">Email</label>
-                                        <input type="text" class="custom-form-control" name="Email" id="Email" placeholder="Email" [(ngModel)]="userDetailsModel.email" #emailValue="ngModel"/>
+                            </form>
+                        </div>
+                        <div class="usr-pro-right-exp" *ngIf="userExperienceShow">
+                            <form action="" id="expForm">
+                                <div class="pro-card-box">
+                                    <div class="remove-box">
+                                        <span class="anchor-tag">
+                                            <svg viewBox="0 0 475 475" class="icon">
+                                                <use xlink:href="#close"></use>
+                                            </svg>
+                                        </span>
                                     </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group">
-                                        <label for="">Hourly Rate ($)</label>
-                                        <input type="text" class="custom-form-control" name="HourlyRate" id="HourlyRate" placeholder="Hourly Rate ($)" [(ngModel)]="userDetailsModel.hourlyRate" #hourlyRideValue="ngModel"/>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
                                     <div class="row">
-                                        <div class="col-sm-5">
+                                        <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label for="">Country</label>
-                                                <input type="text" class="custom-form-control" name="Country" id="Country" placeholder="Country" [(ngModel)]="userDetailsModel.country" #countryValue="ngModel"/>
+                                                <label for="">Title</label>
+                                                <input type="text" class="custom-form-control" name="title"
+                                                    id="title" />
                                             </div>
                                         </div>
-                                        <div class="col-sm-7">
+                                        <div class="col-sm-12">
                                             <div class="form-group">
-                                                <label for="">Phone Number</label>
-                                                <input type="text" class="custom-form-control" name="PhoneNumber" id="PhoneNumber"
-                                                    placeholder="Phone Number" [(ngModel)]="userDetailsModel.phoneNumber" #phoneNumberValue="ngModel"/>
+                                                <label for="">Company</label>
+                                                <input type="text" class="custom-form-control" name="company"
+                                                    id="Company" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="">Industry</label>
+                                                <input type="text" class="custom-form-control" name="industry"
+                                                    id="Industry" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="">Specialities</label>
+                                                <input type="text" class="custom-form-control" name="specialities"
+                                                    id="Specialities" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="">From date</label>
+                                                <input type="text" class="custom-form-control" name="fromDate"
+                                                    id="fromDate" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="">To date</label>
+                                                <input type="text" class="custom-form-control" name="toDate"
+                                                    id="toDate" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="">Location</label>
+                                                <input type="text" class="custom-form-control" name="location"
+                                                    id="location" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="">Work description</label>
+                                                <textarea class="custom-form-control" name="description"
+                                                    id="description" rows="3"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="">Linkedin Profile URL</label>
-                                        <div class="import-group">
-                                            <input type="text" class="custom-form-control"
-                                                placeholder="Linkedin Profile URL" />
-                                            <span class="anchor-tag">Import Profile</span>
+
+                                <div class="text-right profile-submit-btn">
+                                    <button class="theme-btn-primary">Save and next</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="usr-pro-right-edu" *ngIf="userEducationShow">
+                            <form action="" id="eduForm">
+                                <div class="pro-card-box">
+                                    <div class="remove-box">
+                                        <span class="anchor-tag">
+                                            <svg viewBox="0 0 475 475" class="icon">
+                                                <use xlink:href="#close"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="">Institute</label>
+                                                <input type="text" class="custom-form-control" name="Institute"
+                                                    id="Institute" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="">Degree / Program</label>
+                                                <input type="text" class="custom-form-control" name="degree"
+                                                    id="degree" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="">From date</label>
+                                                <input type="text" class="custom-form-control" name="fromDate"
+                                                    id="fromDate" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="">To date</label>
+                                                <input type="text" class="custom-form-control" name="toDate"
+                                                    id="toDate" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="">Location</label>
+                                                <input type="text" class="custom-form-control" name="location"
+                                                    id="location" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="">Description</label>
+                                                <textarea class="custom-form-control" name="description"
+                                                    id="description" rows="3"></textarea>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="">Title</label>
-                                        <input type="text" class="custom-form-control" name="OfficialEmail" id="OfficialEmail"
-                                            placeholder="Your official email ID" [(ngModel)]="userDetailsModel.officialEmail" #fullNameValue="ngModel"/>
+
+                                <div class="text-right profile-submit-btn">
+                                    <button class="theme-btn-primary">Save and next</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="usr-pro-right-oth" *ngIf="userOtherShow">
+                            <form action="" id="othForm">
+                                <div class="pro-card-box">
+                                    <div class="remove-box">
+                                        <span class="anchor-tag">
+                                            <svg viewBox="0 0 475 475" class="icon">
+                                                <use xlink:href="#close"></use>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="">Title</label>
+                                                <input type="text" class="custom-form-control" name="Title"
+                                                    id="Title" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="">From date</label>
+                                                <input type="text" class="custom-form-control" name="fromDate"
+                                                    id="fromDate" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label for="">To date</label>
+                                                <input type="text" class="custom-form-control" name="toDate"
+                                                    id="toDate" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="">Location</label>
+                                                <input type="text" class="custom-form-control" name="location"
+                                                    id="location" />
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group">
+                                                <label for="">Work description</label>
+                                                <textarea class="custom-form-control" name="description"
+                                                    id="description" rows="3"></textarea>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group">
-                                        <label for="">About</label>
-                                        <textarea class="custom-form-control" name="" id="" rows="3" placeholder="About"></textarea>
-                                    </div>
+
+                                <div class="text-right profile-submit-btn">
+                                    <button class="theme-btn-primary">Save and next</button>
                                 </div>
-                                <div class="col-sm-12">
-                                    <div class="form-group text-right">
-                                        <button class="btn btn-save">SAVE AND NEXT</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-                <div class="usr-pro-right-exp" *ngIf="userExperienceShow">Experience</div>
-                <div class="usr-pro-right-edu" *ngIf="userEducationShow">Education</div>
-                <div class="usr-pro-right-oth" *ngIf="userOtherShow">Other</div>
             </div>
         </div><!-- proset-profile -->
         <div class="proset-payment" *ngIf="ProPaymentShow">
@@ -352,7 +562,7 @@
         </div><!-- proset-payment -->
         <div class="proset-transaction" *ngIf="ProTransactionShow">
             <form action="" method="" id="" name="">
-                <div class="transition-filter">                
+                <div class="transition-filter">
                     <div class="filter-left">
                         <div class="inp-filter">
                             <label for="">Country</label>
@@ -363,7 +573,7 @@
                             <input type="text" class="custom-form-control" />
                         </div>
                         <div class="inp-filter-btn">
-                           <button class="btn-gradient btn-go">Go</button>
+                            <button class="btn-gradient btn-go">Go</button>
                         </div>
                     </div>
                     <div class="filter-right">
@@ -371,7 +581,7 @@
                             <span class="anchor-tag">
                                 <svg class="icon-filter" viewBox="0 0 900 786">
                                     <use xlink:href="#filter"></use>
-                                  </svg>
+                                </svg>
                             </span>
                         </div>
                         <div class="download-csv">
@@ -426,8 +636,8 @@
                             </tbody>
                         </table>
                     </div>
-                </div>       
-            </form>   
+                </div>
+            </form>
 
         </div><!-- proset-transaction -->
         <div class="proset-preferences" *ngIf="ProPreferencesShow">
@@ -448,7 +658,7 @@
                             </div>
                             <div class="files-names">
                                 <label class="file-tag">
-                                    NDA-XYZ-Company.pdf 
+                                    NDA-XYZ-Company.pdf
                                     <span>
                                         <svg viewBox="0 0 475 475" class="icon">
                                             <use xlink:href="#close"></use>
@@ -456,7 +666,7 @@
                                     </span>
                                 </label>
                                 <label class="file-tag">
-                                    NDA-XYZ-Company.pdf 
+                                    NDA-XYZ-Company.pdf
                                     <span>
                                         <svg viewBox="0 0 475 475" class="icon">
                                             <use xlink:href="#close"></use>
@@ -518,8 +728,8 @@
                         </div>
                     </div>
                 </div>
-            </div>           
-            
+            </div>
+
         </div><!-- proset-preferences -->
     </div>
 </div>
