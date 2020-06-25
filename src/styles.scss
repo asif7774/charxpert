@@ -283,6 +283,78 @@ textarea.custom-form-control{
     display: block;
   }
 }
+.for-verify-status {
+  position: relative;
+  span.status-icon {
+    svg.verified {
+      fill: #10c573;
+      width: 16px;
+    }
+    svg.not-verified {
+      fill: #f00;
+      width: 16px;
+    }
+    top: 0;
+    position: absolute;
+    right: 0;
+    padding: 11px;
+    cursor: pointer;
+  }
+  input {
+    padding-right: 40px;
+  }
+  .status-icon:hover + .status-tooltip{
+    display: block;
+  }
+  .status-tooltip {
+    border-top: 3px solid #10cb84;
+    box-shadow: 0px 0px 15.68px 0.32px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    padding: 15px 10px;
+    text-align: center;
+    position: absolute;
+    width: 280px;
+    z-index: 9;  
+    bottom: 54px;
+    display: none;
+    right: 0;
+    &:after{
+      content: "";
+      width: 15px;
+      height: 15px;
+      border-style: solid;
+      position: absolute;
+      border-width: 15px 7.5px 0 7.5px;
+      border-color: #ffffff transparent transparent transparent;
+      bottom: -12px;
+      right: 15px;
+    }
+    button {
+      padding: 5px 10px;
+      font-size: 11px;
+    }  
+    h3 {
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      margin-bottom: 10px;
+    }  
+    .verify-code {
+      display: flex;
+      justify-content: center;  
+      .custom-form-control {
+        margin-right: 10px;
+        font-size: 20px;
+        letter-spacing: 2px;
+        width: 90px;
+        padding: 0 5px;
+        text-align: center;
+      }  
+      button {
+        border-radius: 4px;
+      }
+    }
+  }
+}
 .login-modal {
     .modal-dialog{
         @media(max-width : $breakpoint-tablet){

@@ -27,6 +27,8 @@ export class ProfileComponent implements OnInit {
   userEducationShow:boolean = false;
   userOtherShow:boolean = false;
 
+  showStatus:boolean = false;
+
   events: CalendarEvent[] = [
     {
       title: 'No event end date',
@@ -113,6 +115,10 @@ export class ProfileComponent implements OnInit {
     this.userExperienceShow = false;
     this.userEducationShow = false;
     this.userOtherShow = true;
+  }
+
+  fieldStatus(){
+    this.showStatus = !this.showStatus;
   }
 
   DeleteUser() {
