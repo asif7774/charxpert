@@ -27,7 +27,8 @@ export class ProfileComponent implements OnInit {
   userEducationShow:boolean = false;
   userOtherShow:boolean = false;
 
-  showStatus:boolean = false;
+  showEmailStatus:boolean = false;
+  showPhoneStatus:boolean = false;
 
   events: CalendarEvent[] = [
     {
@@ -117,8 +118,11 @@ export class ProfileComponent implements OnInit {
     this.userOtherShow = true;
   }
 
-  fieldStatus(){
-    this.showStatus = !this.showStatus;
+  emailStatus(){
+    this.showEmailStatus = !this.showEmailStatus;
+  }
+  phoneStatus(){
+    this.showPhoneStatus = !this.showPhoneStatus;
   }
 
   DeleteUser() {

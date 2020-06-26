@@ -6,9 +6,16 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+    showUsrDropdown : boolean = false;
+
     constructor() {
     }
     ngOnInit() {
+    }
+
+    toggleUsrDropdown(){
+        this.showUsrDropdown = !this.showUsrDropdown;
     }
 
     public sidebarToggle(): void {

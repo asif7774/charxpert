@@ -21,8 +21,33 @@
               </svg>
           </div>
           <div class="ce-nav-login-user">
-              <span class="usr-profile-pic"><img src="https://www.helloproject.in/extra-images/profile-img-01.jpg" alt=""></span>
-              David M. Bailey
+                <div class="user-dropdown-action" (click)="toggleUsrDropdown()">
+                    <span class="usr-profile-pic">
+                        <img src="https://www.helloproject.in/extra-images/profile-img-01.jpg" alt="">
+                    </span>
+                    <span class="profile-usr-name">David M. Bailey</span>
+                </div>
+                <div class="user-dropdown-menu" *ngIf="showUsrDropdown">
+                    <div class="dropdown-usr-info">
+                        <span class="dui-img">
+                            <img src="https://www.helloproject.in/extra-images/profile-img-01.jpg" />
+                        </span>
+                        <div class="udi-info">
+                            <h4>David M. Bailey</h4>
+                            <p>Expert</p>
+                        </div>
+                    </div>
+                    <div class="ud-menu-list">
+                        <ul>
+                            <li>Contact Support</li>
+                            <li>Setting and Profile</li>
+                            <li>Logout</li>
+                        </ul>
+                    </div>
+                    <div class="ud-action">
+                        <button class="btn-block theme-btn-primary">Become a client</button>
+                    </div>
+                </div>
           </div>
       </div>
   </nav>

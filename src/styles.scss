@@ -303,9 +303,6 @@ textarea.custom-form-control{
   input {
     padding-right: 40px;
   }
-  .status-icon:hover + .status-tooltip{
-    display: block;
-  }
   .status-tooltip {
     border-top: 3px solid #10cb84;
     box-shadow: 0px 0px 15.68px 0.32px rgba(0, 0, 0, 0.1);
@@ -316,7 +313,6 @@ textarea.custom-form-control{
     width: 280px;
     z-index: 9;  
     bottom: 54px;
-    display: none;
     right: 0;
     &:after{
       content: "";
@@ -732,8 +728,12 @@ textarea.custom-form-control{
       background: $white;
       box-shadow: 0px 0px 11.76px 0.24px rgba(0, 0, 0, 0.1);
       display: flex;
+      align-items: center;
       justify-content: space-between;
       padding: 20px 25px;  
+      @media(max-width : $breakpoint-mobile){
+        padding: 10px 15px;  
+      }
       .ce-nav-search .ce-nav-search-group {
         display: flex;
         position: relative;  
@@ -770,8 +770,19 @@ textarea.custom-form-control{
       .ce-nav-right {
         display: flex;
         align-items: center;
+        .ce-nav-search{
+          @media(max-width : $breakpoint-mobile){
+            display: none;
+          }
+        }
       }  
       .ce-nav-login-user {
+        position: relative;
+        .user-dropdown-action {
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+        }
         .usr-profile-pic {
           width: 36px;
           height: 36px;
@@ -789,6 +800,94 @@ textarea.custom-form-control{
         align-items: center;
         font-size: 18px;
         color: #666666;
+        span.profile-usr-name{
+          @media(max-width : $breakpoint-mobile){
+            display: none;
+          }
+        }
+        .user-dropdown-menu {
+          position: absolute;
+          right: 0;
+          z-index: 9;
+          background: #fff;
+          padding: 20px;
+          border-radius: 2px;
+          width: 320px;
+          top: 64px;
+          border-top: 4px solid #10cb85;       
+          box-shadow: 0px 0px 11.76px 0.24px rgba(0, 0, 0, 0.1); 
+          @media(max-width : $breakpoint-mobile){
+            width: 280px;
+            top: 47px;
+          }
+          .dropdown-usr-info {
+            .dui-img {
+              width: 30px;
+              min-width: 30px;
+              height: 30px;
+              border-radius: 50%;
+              overflow: hidden;
+              display: inline-block;
+            }        
+            display: flex;
+            align-items: center;        
+            .udi-info {
+              h4 {
+                font-size: 14px;
+                font-weight: 600;
+                margin: 0;
+              }        
+              p {
+                color: #666666;
+                margin: 0;
+                font-size: 12px;
+              }
+            }
+          }        
+          &:before {
+            content: "";
+            width: 10px;
+            height: 10px;
+            border-style: solid;
+            border-width: 0 5px 10px 5px;
+            border-color: transparent transparent #0fcb84 transparent;
+            position: absolute;
+            top: -12px;
+            right: 30%;
+            margin: 0 auto;
+            @media(max-width : $breakpoint-mobile){
+              right: 25px;
+            }
+          }        
+          .dropdown-usr-info {
+            .udi-info {
+              padding-left: 10px;
+            }        
+            .dui-img img {
+              width: 100%;
+              height: auto;
+              min-height: 30px;
+            }
+          }        
+          .ud-menu-list {
+            padding: 15px 0;        
+            ul {
+              list-style: none;
+              padding: 0;
+              margin: 0;        
+              li {
+                font-size: 14px;
+                padding: 10px 0;
+                color: #111111;
+                cursor: pointer;
+                transition: 0.3s;        
+                &:hover {
+                  color: #0fcb86;
+                }
+              }
+            }
+          }
+        }
       }  
       .ce-nav-notify span.ce-nav-notify-count {
         position: absolute;
@@ -809,6 +908,9 @@ textarea.custom-form-control{
         img {
           max-width: 180px;
           height: auto;
+          @media(max-width : $breakpoint-mobile){
+            max-width: 100px;
+          }
         }  
         span {
           display: inline-block;

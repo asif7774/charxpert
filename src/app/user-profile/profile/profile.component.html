@@ -105,7 +105,7 @@
                                                 <input type="text" class="custom-form-control" name="Email" id="Email"
                                                     placeholder="Email" [(ngModel)]="userDetailsModel.email"
                                                     #emailValue="ngModel" />
-                                                <span class="status-icon" (cliclk)="fieldStatus()"  title="Click here to check status">
+                                                <span class="status-icon" (click)="emailStatus()"  title="Click here to check status">
                                                     <!-- <svg class="verified" viewBox="0 -46 417.813 417">
                                                         <use xlink:href="#correct"></use>
                                                     </svg> -->
@@ -113,7 +113,7 @@
                                                         <use xlink:href="#close"></use>
                                                     </svg>
                                                 </span>
-                                                <div class="status-tooltip" [ngClass]="showStatus ? 'show' : ''">
+                                                <div class="status-tooltip" *ngIf="showEmailStatus">
                                                     <h3>Email has been verified Successfully</h3>
                                                     <!-- <h3>You need to verify your Email</h3>
                                                     <div class="verify-code">
@@ -157,7 +157,7 @@
                                                             placeholder="Phone Number"
                                                             [(ngModel)]="userDetailsModel.phoneNumber"
                                                             #phoneNumberValue="ngModel" />
-                                                        <span class="status-icon" title="Click here to check status">
+                                                        <span class="status-icon" (click)="phoneStatus()" title="Click here to check status">
                                                             <svg class="verified" viewBox="0 -46 417.813 417">
                                                                 <use xlink:href="#correct"></use>
                                                             </svg>
@@ -165,7 +165,7 @@
                                                                 <use xlink:href="#close"></use>
                                                             </svg> -->
                                                         </span>
-                                                        <div class="status-tooltip">
+                                                        <div class="status-tooltip" *ngIf="showPhoneStatus">
                                                             <!-- <h3>Mobile number has been verified Successfully</h3> -->
                                                             <!-- <h3>You need to verify your Email</h3>
                                                             <div class="verify-code">
