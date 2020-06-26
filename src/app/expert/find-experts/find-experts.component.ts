@@ -19,6 +19,9 @@ export class FindExpertsComponent implements OnInit {
     this.modalService.open(content, { size: 'lg', centered: true });
   }
 
+  querySubmitModal(content){
+    this.modalService.open(content, { centered: true });
+  }
 
   ngOnInit(): void {
   }

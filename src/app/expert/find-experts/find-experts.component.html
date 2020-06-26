@@ -237,6 +237,7 @@
 
 <button class="btn btn-outline-primary" (click)="queryModal(contentQS)">Query Summary Modal</button>
 <button class="btn btn-outline-primary" (click)="queryModal(contentQM)">Screening question Modal</button>
+<button class="btn btn-outline-primary" (click)="querySubmitModal(contentQSM)">Submit Query</button>
 
 <ng-template #contentQS let-modal>
     <div class="theme-modal">
@@ -295,6 +296,44 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #contentQSM let-modal>
+    <div class="theme-modal">
+        <div class="modal-close">
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <svg viewBox="0 0 475 475" class="icon">
+                    <use xlink:href="#close"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="query-modal-content">
+            <div class="query-modal-head mb-2">
+                <div class="modal-query-title">
+                    <h3>Thanks for submitting your query</h3>
+                </div>
+            </div>
+            <div class="query-modal-body">
+                <div class="thanks-msg-box">
+                    <div class="sub-check">
+                        <span>
+                            <svg class="icon" viewBox="0 -46 417.813 417">
+                                <use xlink:href="#correct"></use>
+                            </svg>
+                        </span>
+                    </div>
+                    <div class="sub-msgs">
+                        <h4>Congratulations!</h4>
+                        <p>Your Query has been submitted successfully</p>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group text-right">
+                <button class="theme-btn-secondary btn-notify mr-3">My Queries</button>
+                <button class="theme-btn-primary">Track query</button>
+            </div>
         </div>
     </div>
 </ng-template>

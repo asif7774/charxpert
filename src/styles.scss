@@ -352,7 +352,38 @@ textarea.custom-form-control{
       button {
         border-radius: 4px;
       }
+    }    
+  }
+}
+.thanks-msg-box {
+  .sub-check span {
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+    background: #10c573;
+    min-width: 44px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+  }
+  margin-bottom: 50px;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  .sub-msgs {
+    h4 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
     }
+    p {
+      font-size: 14px;
+      margin: 0;
+    }
+    padding-left: 20px;
+  }
+  .sub-check span svg {
+    width: 20px;
   }
 }
 .login-modal {
