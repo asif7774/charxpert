@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-dashboard.component.scss']
 })
 export class UserDashboardComponent implements OnInit {
+  
+  currentRate = 2;
 
   constructor() { }
 
