@@ -11,10 +11,11 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { QueryAcknowledgeComponent } from './query-acknowledge/query-acknowledge.component';
 import { TrackQueryClientComponent } from './track-query-client/track-query-client.component';
 import { TrackQueryExpertComponent } from './track-query-expert/track-query-expert.component';
+import { ScheduleCallComponent } from './schedule-call/schedule-call.component';
 
 
 @NgModule({
-  declarations: [MyExpertsComponent, FindExpertsComponent, TrackQueryComponent, ExpertProfileComponent, QueryAcknowledgeComponent, TrackQueryClientComponent, TrackQueryExpertComponent],
+  declarations: [MyExpertsComponent, FindExpertsComponent, TrackQueryComponent, ExpertProfileComponent, QueryAcknowledgeComponent, TrackQueryClientComponent, TrackQueryExpertComponent, ScheduleCallComponent],
   imports: [
     CommonModule,
     ExpertRoutingModule,
