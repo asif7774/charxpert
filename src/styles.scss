@@ -776,6 +776,46 @@ textarea.custom-form-control{
           }
         }
       }  
+      .if-not-looggedin {
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;      
+          li {
+            display: inline-block;
+            padding: 0 30px;
+            text-transform: uppercase;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+            &.active,&:hover{
+              color: #10C573;
+            }
+          }
+        }      
+        .login-action {
+          span {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            padding: 4px 13px;
+            border-radius: 2px;
+            color: #fff;
+            cursor: pointer;
+          }      
+          .header-btn-login {
+            background: #10C573;
+            margin-right: 20px;
+          }      
+          .header-btn-signup {
+            @extend %update-btn-bg;
+            box-shadow: 0px 0px 15.68px 0.32px rgba(0, 113, 178, 0.4);
+          }
+        }
+      }
       .ce-nav-login-user {
         position: relative;
         .user-dropdown-action {

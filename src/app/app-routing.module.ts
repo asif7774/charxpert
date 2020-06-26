@@ -5,7 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   { path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
-    data: { showHeader: false, showSidebar: false, showFooter: false,  compactLayout: false }
+    data: { showHeader: true, showSidebar: false, showFooter: true,  compactLayout: false }
   },
   {
     path: 'verify-email',

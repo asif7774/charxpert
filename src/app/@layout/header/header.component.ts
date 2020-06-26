@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
     selector: 'app-header',
@@ -9,9 +10,15 @@ export class HeaderComponent implements OnInit {
 
     showUsrDropdown : boolean = false;
 
+    eventsSubject: Subject<void> = new Subject<void>();
+
     constructor() {
     }
     ngOnInit() {
+    }
+
+    loginModalClick(modalType:any) {
+        this.eventsSubject.next(modalType);
     }
 
     toggleUsrDropdown(){

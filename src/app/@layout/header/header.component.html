@@ -1,26 +1,48 @@
 <div class="header-nav">
-  <nav class="ce-navigation">
-      <div class="ce-nav-logo">
-          <span class="anchor-tag"><img src="assets/images/home/login-logo.png" alt=""></span>
-      </div>
-      <div class="ce-nav-right">
-          <div class="ce-nav-search">
-              <div class="ce-nav-search-group">
-                  <span>
-                      <svg viewBox="0 0 410.23 410.23" class="icon">
-                          <use xlink:href="#search"></use>
-                      </svg>
-                  </span>
-                  <input type="text" placeholder="Search">
-              </div>
-          </div>
-          <div class="ce-nav-notify">
-              <span class="ce-nav-notify-count">10</span>
-              <svg class="icon" viewBox="0 0 95 91" >
-                <use xlink:href="#notification"></use>
-              </svg>
-          </div>
-          <div class="ce-nav-login-user">
+    <nav class="ce-navigation">
+        <div class="ce-nav-logo">
+            <span class="anchor-tag" [routerLink]="['/']" routerLinkActive="router-link-active" ><img src="assets/images/home/login-logo.png" alt=""></span>
+        </div>
+
+        <!-- if not logged in menu -->
+        <div class="ce-nav-right if-not-looggedin">
+            <ul>
+                <li class="active">
+                    <span>Queries</span>
+                </li>
+                <li>
+                    <span>Faq</span>
+                </li>
+                <li>
+                    <span>How it works</span>
+                </li>
+            </ul>
+            <div class="login-action">
+                <span class="header-btn-login" (click)="loginModalClick('login')">Login</span>
+                <span class="header-btn-signup" (click)="loginModalClick('signup')">Register</span>
+            </div>
+        </div>
+        <!-- End if not logged in menu -->
+
+        <!-- if login show menu -->
+        <!-- <div class="ce-nav-right">
+            <div class="ce-nav-search">
+                <div class="ce-nav-search-group">
+                    <span>
+                        <svg viewBox="0 0 410.23 410.23" class="icon">
+                            <use xlink:href="#search"></use>
+                        </svg>
+                    </span>
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+            <div class="ce-nav-notify">
+                <span class="ce-nav-notify-count">10</span>
+                <svg class="icon" viewBox="0 0 95 91">
+                    <use xlink:href="#notification"></use>
+                </svg>
+            </div>
+            <div class="ce-nav-login-user">
                 <div class="user-dropdown-action" (click)="toggleUsrDropdown()">
                     <span class="usr-profile-pic">
                         <img src="https://www.helloproject.in/extra-images/profile-img-01.jpg" alt="">
@@ -48,7 +70,11 @@
                         <button class="btn-block theme-btn-primary">Become a client</button>
                     </div>
                 </div>
-          </div>
-      </div>
-  </nav>
+            </div>
+        </div> -->
+        <!-- End if login show menu -->
+    </nav>
 </div>
+
+
+<app-login-signup-modal [events]="eventsSubject.asObservable()"></app-login-signup-modal>

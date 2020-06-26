@@ -5,6 +5,7 @@
     flex-direction: row;
     flex: 1 1 100%;
     min-height: 100vh;
+    flex-wrap: wrap;
     @media screen and (max-width:991px){
         overflow-x: hidden;
         ::ng-deep{
