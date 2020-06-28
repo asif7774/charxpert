@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 export class HeaderComponent implements OnInit {
 
     showUsrDropdown : boolean = false;
+    isMenuCollapsed : boolean = false;
 
     eventsSubject: Subject<void> = new Subject<void>();
 

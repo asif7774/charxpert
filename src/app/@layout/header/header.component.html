@@ -1,12 +1,13 @@
 <div class="header-nav">
     <nav class="ce-navigation">
         <div class="ce-nav-logo">
-            <span class="anchor-tag" [routerLink]="['/']" routerLinkActive="router-link-active" ><img src="assets/images/home/login-logo.png" alt=""></span>
+            <span class="anchor-tag" [routerLink]="['/']" routerLinkActive="router-link-active"><img
+                    src="assets/images/home/login-logo.png" alt=""></span>
         </div>
 
         <!-- if not logged in menu -->
-        <div class="ce-nav-right if-not-looggedin">
-            <ul>
+        <div class="ce-nav-right if-not-looggedin">            
+            <ul [ngClass]="!isMenuCollapsed ? '' : 'show-menu'">
                 <li class="active">
                     <span>Queries</span>
                 </li>
@@ -21,6 +22,11 @@
                 <span class="header-btn-login" (click)="loginModalClick('login')">Login</span>
                 <span class="header-btn-signup" (click)="loginModalClick('signup')">Register</span>
             </div>
+            <button class="nav-menu-toggle" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+                <svg viewBox="0 -96 512 512" class="icon">
+                    <use xlink:href="#menu"></use>
+                </svg>
+            </button>
         </div>
         <!-- End if not logged in menu -->
 

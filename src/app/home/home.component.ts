@@ -1,11 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-// import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
-// import { AuthenticationService } from 'src/app/_services/Authentication.service';
-// import { SignUpUserModel } from 'src/app/_models/SignUpUserModel';
-// import { HttpErrorResponse } from '@angular/common/http';
-// import { CommonService } from 'src/app/_services/Common/Common.service';
-// import { Subject } from 'rxjs';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 @Component({
   selector: 'app-home',
@@ -18,5 +12,17 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  public config: SwiperConfigInterface = {
+    //a11y: true,
+    direction: 'horizontal',
+    keyboard: true,
+    loop: true,
+    mousewheel: true,
+    scrollbar: false,
+    observer: true,
+    navigation: false,
+    pagination: true,
+  };
   
 }

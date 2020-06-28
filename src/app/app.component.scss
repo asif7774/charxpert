@@ -26,5 +26,16 @@ input:-internal-autofill-selected {
     background-color: #fff !important;
     background-image: none !important;
 }
+.content.if-not-login {
+    padding: 0;
+    overflow: hidden;
+    height: auto;
+    display: block;
+    background: #FFFFFF;
+}
+.content.if-not-login .content-block {
+    flex-basis: 100%;
+    padding: 0;
+}
 
 

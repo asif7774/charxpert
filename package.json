@@ -30,6 +30,7 @@
     "date-fns": "^2.13.0",
     "ngx-chips": "^2.1.0",
     "ngx-cookie-service": "^3.0.4",
+    "ngx-swiper-wrapper": "^9.0.1",
     "ngx-toastr": "^9.2.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.13.0",
