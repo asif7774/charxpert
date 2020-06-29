@@ -13,10 +13,12 @@ import { SharedModule } from './core/shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { TokenInterceptor } from './_interceptor/TokenInterceptor';
+import { ReloginComponent } from './common-component/relogin/relogin.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ReloginComponent
   ],
   imports: [
     BrowserModule,

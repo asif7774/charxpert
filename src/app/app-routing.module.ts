@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ReloginComponent } from './common-component/relogin/relogin.component';
 
 
 const routes: Routes = [
@@ -36,7 +37,12 @@ const routes: Routes = [
     path: 'calls',
     loadChildren: () => import('./calls/calls.module').then(m => m.CallsModule),
     data: { showHeader: true, showSidebar: true, showFooter: false,  compactLayout: false }
-  }
+  },
+  { 
+    path: 'relogin', 
+    component: ReloginComponent,
+    data: { showHeader: true, showSidebar: false, showFooter: false,  compactLayout: false }
+  },
 ]
 
 @NgModule({

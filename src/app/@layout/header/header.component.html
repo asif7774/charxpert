@@ -8,11 +8,11 @@
         <!-- if not logged in menu -->
         <div class="ce-nav-right if-not-looggedin">            
             <ul [ngClass]="!isMenuCollapsed ? '' : 'show-menu'">
-                <li class="active">
+                <li [routerLink]="['/all-queries']" routerLinkActive="active" >
                     <span>Queries</span>
                 </li>
-                <li>
-                    <span>Faq</span>
+                <li [routerLink]="['/faq']" routerLinkActive="active">
+                    <span >Faq</span>
                 </li>
                 <li>
                     <span>How it works</span>

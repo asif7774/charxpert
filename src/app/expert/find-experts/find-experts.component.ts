@@ -10,6 +10,8 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class FindExpertsComponent implements OnInit {
  
   currentRate = 4;
+  
+  toggleChat : boolean= false;
 
   public Editor = ClassicEditor;
 
@@ -17,6 +19,10 @@ export class FindExpertsComponent implements OnInit {
 
   queryModal(content) {
     this.modalService.open(content, { size: 'lg', centered: true });
+  }
+  
+  closeChat(){
+    this.toggleChat = !this.toggleChat;
   }
 
   querySubmitModal(content){

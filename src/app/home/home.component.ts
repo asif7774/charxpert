@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
 @Component({
@@ -6,13 +6,25 @@ import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-
+export class HomeComponent implements OnInit, OnDestroy {
+  showFornt: boolean = false;
   carIndex: any = 2;
 
   constructor() {}
 
   ngOnInit(): void {
+    this.classAdd();
+  }
+
+  ngOnDestroy(): void {
+    this.classRemove();
+  }
+
+  classAdd(){
+    document.getElementById('contectWrapper').classList.add("if-not-login");
+  }
+  classRemove(){
+    document.getElementById('contectWrapper').classList.remove("if-not-login");
   }
 
   public onIndexChange(index: number): void {

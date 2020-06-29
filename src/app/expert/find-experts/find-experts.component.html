@@ -86,7 +86,7 @@
                                                 <span class="anchor-tag">View Profile</span>
                                             </div>
                                             <div class="call-action">
-                                                <button class="btn-msg">Message</button>
+                                                <button class="btn-msg" (click)="closeChat()">Message</button>
                                                 <button class="btn-gradient btn-schedule">Re-schedule</button>
                                             </div>
                                         </div>
@@ -125,7 +125,7 @@
                                                 <span class="anchor-tag">View Profile</span>
                                             </div>
                                             <div class="call-action">
-                                                <button class="btn-msg">Message</button>
+                                                <button class="btn-msg" (click)="closeChat()">Message</button>
                                                 <button class="btn-gradient btn-schedule">Re-schedule</button>
                                             </div>
                                         </div>
@@ -164,7 +164,7 @@
                                                 <span class="anchor-tag">View Profile</span>
                                             </div>
                                             <div class="call-action">
-                                                <button class="btn-msg">Message</button>
+                                                <button class="btn-msg" (click)="closeChat()">Message</button>
                                                 <button class="btn-gradient btn-schedule">Re-schedule</button>
                                             </div>
                                         </div>
@@ -179,9 +179,9 @@
     </div>
 </div>
 <!-- Chat session -->
-<div class="chat-box-main">
+<div class="chat-box-main" *ngIf="toggleChat">
     <div class="skip-chat-btn">
-        <span>Skip
+        <span (click)="closeChat()">Skip
             <svg viewBox="0 0 475 475" class="icon">
                 <use xlink:href="#close"></use>
             </svg>
@@ -232,6 +232,7 @@
         </div>
     </div>
 </div>
+<div class="overlay" *ngIf="toggleChat"></div>
 <!-- When chatbox open yhis div should show for overlay -->
 <!-- <div class="overlay"></div> -->
 
