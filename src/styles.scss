@@ -38,6 +38,9 @@ $breakpoint-tablet : 1024px;
 body{
     font-family: 'Open Sans', sans-serif;
 }
+a,button{
+  outline: none;
+}
 .theme-btn-primary{
   @extend %update-btn-bg;
   font-size: 13px;
@@ -49,7 +52,11 @@ body{
   letter-spacing: 1px;
   cursor: pointer;
   text-transform: uppercase;
-  box-shadow: 0px 0px 15.68px 0.32px rgba(0, 113, 178, 0.4)
+  transition: all .4s ease-in-out;
+  box-shadow: 0px 0px 15.68px 0.32px rgba(0, 113, 178, 0.4);
+  &:hover{
+    background: linear-gradient(135deg, #02b8f5 0%,#0071b2 100%);
+  }
 }
 .theme-btn-secondary{
   font-size: 13px;
@@ -61,7 +68,11 @@ body{
   border-radius: 2px;
   letter-spacing: 1px;
   text-transform: uppercase;
+  transition: all .4s ease-in-out;
   background: #10C573;
+  &:hover{
+    background: #09ac62;
+  }
 } 
 .theme-btn-tursary{
   font-size: 13px;
@@ -74,6 +85,7 @@ body{
   letter-spacing: 1px;
   text-transform: uppercase;
   background: #fff;
+  transition: all .4s ease-in-out;
   box-shadow: 0px 0px 15.68px 0.32px rgba(240, 3, 50, 0.1);
 }
 .overlay{
@@ -195,6 +207,9 @@ a,button{
     cursor: pointer;
     transition: $transition-base;
     color: $link-color;
+    &:hover{
+      color: #00669b;
+    }
     &:focus{
       outline: none;
     }
@@ -497,7 +512,7 @@ textarea.custom-form-control{
                         border-bottom: 2px;
                         padding: 10px;
                         &:hover{
-                            background: $green;
+                          background: #09ac62;
                         }
                     }
                     .login-check-link {
@@ -581,6 +596,9 @@ textarea.custom-form-control{
   }
   .signup-body {
     padding: 20px 30px;
+    .style-check input{
+      width: 20px;
+    }
     @media(max-width : $breakpoint-mobile){
       padding: 15px;
     }
@@ -638,6 +656,9 @@ textarea.custom-form-control{
       border-bottom: 2px;
       padding: 10px;
       min-width: 300px;
+      &:hover{
+        background: #09ac62;
+      }
       @media(max-width : $breakpoint-mobile){
         padding: 15px;
         min-width: 250px;
@@ -653,6 +674,7 @@ textarea.custom-form-control{
         color: $link-color ;
         font-weight: 800;
         text-decoration: none;
+        transition: 0.3s;        
     }
   } 
 }
@@ -853,10 +875,16 @@ textarea.custom-form-control{
           .header-btn-login {
             background: #10C573;
             margin-right: 20px;
+            &:hover{
+              background: #09ac62;
+            }
           }      
           .header-btn-signup {
             @extend %update-btn-bg;
             box-shadow: 0px 0px 15.68px 0.32px rgba(0, 113, 178, 0.4);
+            &:hover{
+              background: linear-gradient(135deg, #02b8f5 0%,#0071b2 100%);
+            }
           }
         }
       }
