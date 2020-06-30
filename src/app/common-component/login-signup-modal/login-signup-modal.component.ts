@@ -44,6 +44,10 @@ export class LoginSignupModalComponent implements OnInit, OnDestroy {
     this.signupShow = false;
   }
 
+  redirectionFn(url:string){
+    this.modalService.dismissAll();
+    this.common.change_routing(url);    
+  }
   /**
    * Sign up User.
    */

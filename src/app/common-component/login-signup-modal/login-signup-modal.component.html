@@ -23,7 +23,7 @@
         <div class="modal-right-panel">
             <div class="modal-right-panel-content">
                 <div class="modal-logo">
-                    <img src="assets/images/home/login-logo.svg" alt="chatXpert">
+                    <img src="assets/images/home/login-logo.png" alt="chatXpert">
                 </div>
                 <div class="modal-form">
                     <!-- Login Modal -->
@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <button class="btn btn-block btn-green" [disabled]="!signinform.form.valid" (click)="SignInUser()">Sign In</button>
+                                <button class="btn btn-block btn-green" (click)="redirectionFn('/user-profile')" >Sign In</button>
                             </div>
                             <div class="form-group">
                                 <div class="login-option">Or</div>
@@ -226,7 +226,7 @@
                     </div>
                     <div class="col-sm-12 text-center">
                         <div class="form-group">
-                            <button class="btn btn-green" [disabled]="!signupform.form.valid" (click)="signUpUser()">Sign
+                            <button class="btn btn-green" (click)="redirectionFn('/verify-email')">Sign
                                 Up</button>
                         </div>
                         <div class="if-no-account">

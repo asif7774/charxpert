@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./query-acknowledge.component.scss']
 })
 export class QueryAcknowledgeComponent implements OnInit {
-
+  currentRate = 4;
   constructor() { }
 
   ngOnInit(): void {

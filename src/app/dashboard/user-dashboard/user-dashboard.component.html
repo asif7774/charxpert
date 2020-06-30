@@ -1,7 +1,7 @@
 <div class="dashboard-main">
     <div class="row">
         <div class="col-lg-3 col-md-6">
-            <div class="dash-card dash-card-orange">
+            <div class="dash-card dash-card-orange" [routerLink]="['/experts/find-expert']">
                 <div class="dash-card-icon">
                     <svg class="icon" viewBox="0 0 900 900">
                         <use xlink:href="#home"></use>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
-            <div class="dash-card dash-card-blue">
+            <div class="dash-card dash-card-blue" [routerLink]="['/experts/my-experts']">
                 <div class="dash-card-icon">
                     <svg class="icon" viewBox="0 0 900 900">
                         <use xlink:href="#home"></use>
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-6">
-            <div class="dash-card dash-card-green">
+            <div class="dash-card dash-card-green" [routerLink]="['/user-profile/profile']">
                 <div class="dash-card-icon">
                     <svg class="icon" viewBox="0 0 900 900">
                         <use xlink:href="#home"></use>
@@ -75,11 +75,11 @@
                 </div>
                 <div class="dash-notification-content">
                     <ul>
-                        <li>
+                        <li [routerLink]="['/experts/track-query-client']" >
                             <p><b>ChatXpert</b> has sourced you some experts, please select which suits you best.</p>
                             <div class="post-time">2 hours ago</div>
                         </li>
-                        <li>
+                        <li [routerLink]="['/experts/expert-profile']">
                             <p><b>Chandra Prakash Mishra</b> has applied to edit the scheduled call.</p>
                             <div class="post-time">2 hours ago</div>
                         </li>
@@ -328,7 +328,7 @@
                                             <use xlink:href="#collection"></use>
                                         </svg>
                                     </div>
-                                    <h3>Looking for an expert to understand the Automobile market in South Africa</h3>
+                                    <h3 [routerLink]="['/experts/track-query-expert']">Looking for an expert to understand the Automobile market in South Africa</h3>
                                     <div class="dash-query-box">
                                         <div class="dq-users">
                                             <span><img src="https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg" alt=""></span>

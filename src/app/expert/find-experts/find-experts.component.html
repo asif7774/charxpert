@@ -49,7 +49,7 @@
                     <div class="post-query">
                         <div class="fe-myexpert-title">
                             <h3>My Experts</h3>
-                            <span class="anchor-tag">View all</span>
+                            <span class="anchor-tag" [routerLink]="['/experts/my-experts']">View all</span>
                         </div>
                         <div class="calls-block">
                             <ul>
@@ -87,7 +87,7 @@
                                             </div>
                                             <div class="call-action">
                                                 <button class="btn-msg" (click)="closeChat()">Message</button>
-                                                <button class="btn-gradient btn-schedule">Re-schedule</button>
+                                                <button class="btn-gradient btn-schedule" [routerLink]="['/experts/schedule-call']" >Re-schedule</button>
                                             </div>
                                         </div>
                                     </div>
@@ -126,7 +126,7 @@
                                             </div>
                                             <div class="call-action">
                                                 <button class="btn-msg" (click)="closeChat()">Message</button>
-                                                <button class="btn-gradient btn-schedule">Re-schedule</button>
+                                                <button class="btn-gradient btn-schedule"  [routerLink]="['/experts/schedule-call']" >Re-schedule</button>
                                             </div>
                                         </div>
                                     </div>
@@ -165,7 +165,7 @@
                                             </div>
                                             <div class="call-action">
                                                 <button class="btn-msg" (click)="closeChat()">Message</button>
-                                                <button class="btn-gradient btn-schedule">Re-schedule</button>
+                                                <button class="btn-gradient btn-schedule"  [routerLink]="['/experts/schedule-call']" >Re-schedule</button>
                                             </div>
                                         </div>
                                     </div>
