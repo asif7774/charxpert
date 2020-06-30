@@ -4051,6 +4051,9 @@ footer {
           svg {
             width: 54px;
             fill: #08a1d4;
+            &.user-group{
+              width: 106px;
+            }
           }
           margin-bottom: 30px;
           text-align: center;
