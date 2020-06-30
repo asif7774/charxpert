@@ -468,6 +468,9 @@ textarea.custom-form-control{
                 }
                 .modal-logo {
                     margin-bottom: 50px;
+                    img{
+                      max-width: 180px;
+                    }
                 }
                 .modal-form {
                     .custom-input {
