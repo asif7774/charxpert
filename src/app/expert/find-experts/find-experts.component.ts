@@ -29,6 +29,10 @@ export class FindExpertsComponent implements OnInit {
     this.modalService.open(content, { centered: true });
   }
 
+  messageModal(content) {
+    this.modalService.open(content, { centered: true });
+  }
+
   ngOnInit(): void {
   }
 

@@ -13,12 +13,15 @@ import { TrackQueryClientComponent } from './track-query-client/track-query-clie
 import { TrackQueryExpertComponent } from './track-query-expert/track-query-expert.component';
 import { ScheduleCallComponent } from './schedule-call/schedule-call.component';
 
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 @NgModule({
   declarations: [MyExpertsComponent, FindExpertsComponent, TrackQueryComponent, ExpertProfileComponent, QueryAcknowledgeComponent, TrackQueryClientComponent, TrackQueryExpertComponent, ScheduleCallComponent],
   imports: [
     CommonModule,
     ExpertRoutingModule,
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     NgbModule,
     CKEditorModule
   ]

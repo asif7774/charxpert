@@ -223,6 +223,9 @@ a,button{
   color: $white;
   border: 0;
   outline: none;
+  &:hover{
+    background: linear-gradient(135deg, #02b8f5 0%,#0071b2 100%);
+  }
 }
 .custom-form-control {
   width: 100%;
@@ -1978,20 +1981,42 @@ textarea.custom-form-control{
   .inbox-list {
     position: relative;
     width: 380px;
-    background: #F4F8F9; 
-    max-height: 700px;
-    overflow-y: auto;  
+    background: #F4F8F9;     
     @media(max-width : $breakpoint-tablet){
       width: 300px;
     }
     @media(max-width : $breakpoint-mobile){
       width: 100%;
-    }
-    
+    } 
+    .inb-pages {
+      ngb-pagination {
+        display: inline-block;    
+        li.page-item {
+          &.active a {
+            background: #10c573;
+            border-color: #10c573;
+            color: #fff;
+          }    
+          a {
+            color: #333;
+            font-size: 14px;
+            outline: none;
+            border: 0;
+            padding: 9px 11px;
+            margin: 0 2px;
+            border-radius: 2px !important;
+          }
+        }
+      }    
+      text-align: center;
+      padding: 15px 0;
+    }   
     ul {
       list-style: none;
       padding: 0;
       margin: 0;
+      max-height: 700px;
+      overflow-y: auto;  
       li .inbox-list-main {
         position: relative;
         display: flex;
@@ -2099,6 +2124,9 @@ textarea.custom-form-control{
         border-radius: 50%;
         text-align: center;
         line-height: 28px;
+        &:hover{
+          background: #eee;
+        }
         svg {
           fill: #000;
         }
@@ -2147,6 +2175,10 @@ textarea.custom-form-control{
     border-radius: 50%;
     text-align: center;
     line-height: 30px;
+    transition: 0.3s;
+    &:hover{
+      background: #eee;
+    }
   }
   .inb-usr-action svg {
     fill: #000;
@@ -2239,6 +2271,10 @@ textarea.custom-form-control{
       text-transform: uppercase;
       letter-spacing: 1px;
       border-radius: 2px;
+      transition: 0.3s;
+      &:hover{
+        background: #09ac62;
+      }
     }
     .messege-box {
       flex-basis: 100%;
@@ -2271,8 +2307,17 @@ textarea.custom-form-control{
     }
     .add-attachment {
       line-height: 40px;
+      cursor: pointer;
+      &:hover svg{
+        fill: #09ac62;
+      }
     }
   }
+}
+.user-rating ngb-rating span {
+  font-size: 24px;
+  line-height: 22px;
+  color: #FFB90A;
 }
 .calls-block ul {
   padding: 0;
@@ -2420,6 +2465,11 @@ textarea.custom-form-control{
             color: #F00332;
             padding: 5px 13px;
             border-radius: 2px;
+            transition: 0.3s;
+            outline: none;
+            &:hover{
+              background-color: #f9f9f9;
+            }
           }
         }
       }
@@ -2505,6 +2555,11 @@ textarea.custom-form-control{
       .my-exp-head-usr-info {
         text-align: center;
         margin-bottom: 25px;
+        ngb-rating span {
+          font-size: 24px;
+          line-height: 22px;
+          color: #FFB90A;
+        }
         h3 {
           font-size: 14px;
           font-weight: 600;
@@ -2800,9 +2855,14 @@ textarea.custom-form-control{
         border: 0;
         outline: none;
         background: transparent;
+        transition: 0.3s;
+        &:hover svg{
+          fill: #07945c;
+        }
         svg {
           fill: #10C97F;
           width: 24px;
+          transition: 0.3s;
         }
       }
     }
@@ -3659,7 +3719,7 @@ textarea.custom-form-control{
   }
   .dash-card-icon svg {
     opacity: 0.2;
-    width: 60px;
+    width: 74px;
   }
 }
 .dashboard-card-block{
@@ -3807,6 +3867,7 @@ textarea.custom-form-control{
             .dash-query-box .dq-ftr {
               display: flex;
               justify-content: space-between;
+              align-items: center;
               .dq-dated {
                 background: #EFF6F7;
                 padding: 4px 5px;
@@ -4944,6 +5005,11 @@ section.home-faqs {
       display: flex;
       align-items: center;
       margin-bottom: 35px;  
+      ngb-rating span {
+        font-size: 50px;
+        line-height: 50px;
+        color: #FFB90A;
+      }
       .rate-count {
         margin-left: 15px;
         font-size: 20px;

@@ -11,7 +11,7 @@
                             <h3>Post a query</h3>
                             <p>Please enter the complete details of the project you need the help with the expert.</p>
                         </div>
-                        <form action="">
+                        <!-- <form action=""> -->
                             <div class="form-group">
                                 <label for="">Subject</label>
                                 <input type="text" name="" id="" class="custom-form-control"
@@ -39,10 +39,10 @@
                                     <p>A chat session will be initiated on submitting the above query. Our intelligent
                                         chatboat will help you to refine your query, so that we can provide you the best
                                         available experts. Thanks.</p>
-                                    <button class="btn-gradient">Submit</button>
+                                    <button class="btn-gradient" (click)="closeChat()">Submit</button>
                                 </div>
                             </div>
-                        </form>
+                        <!-- </form> -->
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
@@ -86,7 +86,7 @@
                                                 <span class="anchor-tag">View Profile</span>
                                             </div>
                                             <div class="call-action">
-                                                <button class="btn-msg" (click)="closeChat()">Message</button>
+                                                <button class="btn-msg" (click)="messageModal(contentMsgExpert)">Message</button>
                                                 <button class="btn-gradient btn-schedule" [routerLink]="['/experts/schedule-call']" >Re-schedule</button>
                                             </div>
                                         </div>
@@ -125,7 +125,7 @@
                                                 <span class="anchor-tag">View Profile</span>
                                             </div>
                                             <div class="call-action">
-                                                <button class="btn-msg" (click)="closeChat()">Message</button>
+                                                <button class="btn-msg" (click)="messageModal(contentMsgExpert)">Message</button>
                                                 <button class="btn-gradient btn-schedule"  [routerLink]="['/experts/schedule-call']" >Re-schedule</button>
                                             </div>
                                         </div>
@@ -164,7 +164,7 @@
                                                 <span class="anchor-tag">View Profile</span>
                                             </div>
                                             <div class="call-action">
-                                                <button class="btn-msg" (click)="closeChat()">Message</button>
+                                                <button class="btn-msg" (click)="messageModal(contentMsgExpert)">Message</button>
                                                 <button class="btn-gradient btn-schedule"  [routerLink]="['/experts/schedule-call']" >Re-schedule</button>
                                             </div>
                                         </div>
@@ -465,6 +465,39 @@
                     <button class="theme-btn-primary">add screening questions</button>
                 </div>
             </div>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #contentMsgExpert let-modal>
+    <div class="theme-modal">
+        <div class="modal-close">
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <svg viewBox="0 0 475 475" class="icon">
+                    <use xlink:href="#close"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="query-modal-content">
+            <div class="query-modal-head mb-3">
+                <div class="modal-query-title">
+                    <h3>Message to <span>user name</span></h3>
+                </div>
+            </div>
+            <form action="">
+                <div class="query-modal-body">
+                    <div class="form-group mb-2">
+                        <label for="">Enter message here</label>
+                        <textarea class="custom-form-control" rows="3" placeholder="Enter message here" ></textarea>
+                    </div>   
+                    <div class="form-group">
+                        <p class="text-muted">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal…</p>
+                    </div>                  
+                    <div class="form-group text-right">
+                        <button class="theme-btn-primary">Send Message</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </ng-template>

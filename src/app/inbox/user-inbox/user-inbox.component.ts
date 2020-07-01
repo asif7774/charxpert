@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-inbox.component.scss']
 })
 export class UserInboxComponent implements OnInit {
-
+  page = 4;
   constructor() { }
 
   ngOnInit(): void {
